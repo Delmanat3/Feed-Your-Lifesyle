@@ -6,11 +6,14 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
+var passport = require("./config/passport");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express()
 
 const axios = require('axios')
+app.use(passport.initialize());
+app.use(passport.session());
 
 const hbs = exphbs.create({ helpers });
 
@@ -35,6 +38,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+ 
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
