@@ -4,7 +4,7 @@ var db = require("../models");
 
 // function to construct URL passed for API
 function constructURL(paramObject){
-
+    
     if (paramObject.foods){
         var queryURL = "http://api.edamam.com/search?app_id=adc6f730&app_key=1c36192c8df25e1cdb4a6f66853b9236&q=";
         var foods = paramObject.foods.toString();
@@ -47,16 +47,11 @@ module.exports = function(app){
     // Grabs object passed and calls edamam api
     /* Object being passed will have property foods (required), calories, recipeCount, health
     */
-    app.post("/api/recipesearch", function(req, res){
+    app.post("/api/recipesearch", async(req, res)=>{
         try{
-            var queryUrl = constructURL(req.body);
-            db.history.create({
-                usertwoid: req.body.userId,
-                item: req.body.foods.toString(),
-              }).then((result) => {
-                console.log(result);
-              });
-            request(queryUrl, function (error, response, body) {
+            const queryUrl = constructURL(req.body)
+
+            app.get(queryUrl, function (error, response, body) {
                 if (error) {console.log('error:', error);} // Print the error if one occurred
                 console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
                 if (JSON.parse(body).count === 0){
