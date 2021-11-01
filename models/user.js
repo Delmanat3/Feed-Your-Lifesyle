@@ -55,5 +55,9 @@ User.init(
     modelName: 'user',
   }
 );
-
+history.belongsTo(models.usertwos, {
+  foreignKey: {
+    allowNull: false
+  }
+});
 module.exports = User;
