@@ -1,16 +1,24 @@
-var request = require("request");
+
 var db = require("../models");
 
 
+
+// Diet label: one of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”
+// Maximum number of ingredients. Example: ingr=5
+
+// “health=peanut-free&health=tree-nut-free”
+// cuisineType=chinese&cuisineType=indian”
+// “dishType=soup&dishType=dessert”
+// “calories=100-300” will return all recipes with which have between 100 and 300 kcal per serving.
 // function to construct URL passed for API
-function constructURL(paramObject){
+function constructURL(data){
     
-    if (paramObject.foods){
-        var queryURL = "http://api.edamam.com/search?app_id=adc6f730&app_key=1c36192c8df25e1cdb4a6f66853b9236&q=";
-        var foods = paramObject.foods.toString();
+    if (data.foods){
+       const queryURL= "https://api.edamam.com/api/recipes/v2?type=public&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66&q="
+        var foods = data.foods.toString();
         queryURL += foods;
-        if (paramObject.calories){
-            var calories = parseInt(paramObject.calories);
+        if (data.calories){
+            var calories = parseInt(data.calories);
             if(calories){
                 queryURL += "&calories=";
                 queryURL += "lte " + calories;
@@ -18,17 +26,17 @@ function constructURL(paramObject){
                 throw "calorie needs to be an integer";
             }
         }
-        if (paramObject.health){
-            if (typeof paramObject.health !== "string"){
+        if (data.health){
+            if (typeof data.health !== "string"){
                 throw "health needs to be a String";
             }else{
                 queryURL += "&health=";
-                queryURL += paramObject.health;
+                queryURL += data.health;
             }
         }
 
-        if (paramObject.recipeCount){
-            var recipeCount = parseInt(paramObject.recipeCount);
+        if (data.recipeCount){
+            var recipeCount = parseInt(data.recipeCount);
             if (recipeCount){
                 queryURL += "&to=";
                 queryURL += recipeCount;
@@ -40,6 +48,7 @@ function constructURL(paramObject){
     }else{
         throw "foods property is required"
     }
+
 }
 
 
@@ -49,9 +58,11 @@ module.exports = function(app){
     */
     app.post("/api/recipesearch", async(req, res)=>{
         try{
-            const queryUrl = constructURL(req.body)
-
-            app.get(queryUrl, function (error, response, body) {
+          const reqD=constructURL(req.body){
+              
+          }
+            const resData=await axios.get(reqD,)
+            fetch(queryUrl, function (error, response, body) {
                 if (error) {console.log('error:', error);} // Print the error if one occurred
                 console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
                 if (JSON.parse(body).count === 0){
