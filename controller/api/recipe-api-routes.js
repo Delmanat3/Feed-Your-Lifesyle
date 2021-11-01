@@ -1,4 +1,4 @@
-
+const axios=require('axios')
 var db = require("../models");
 
 
@@ -17,13 +17,13 @@ function constructURL(data){
        const queryURL= "https://api.edamam.com/api/recipes/v2?type=public&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66&q="
         var foods = data.foods.toString();
         queryURL += foods;
-        if (data.calories){
-            var calories = parseInt(data.calories);
-            if(calories){
-                queryURL += "&calories=";
-                queryURL += "lte " + calories;
+        if (data.diet){
+            //var diet1 = parseInt(data.diet);
+            if(data.diet){
+                queryURL += "&diet=";
+                queryURL +=  diet;
             }else{
-                throw "calorie needs to be an integer";
+                throw "diet type";
             }
         }
         if (data.health){
@@ -51,17 +51,25 @@ function constructURL(data){
 
 }
 
-
-module.exports = function(app){
+ $('search-button').on('click',
+        async(app)=>{
     // Grabs object passed and calls edamam api
     /* Object being passed will have property foods (required), calories, recipeCount, health
     */
+  
     app.post("/api/recipesearch", async(req, res)=>{
         try{
-          const reqD=constructURL(req.body){
-              
-          }
-            const resData=await axios.get(reqD,)
+          const reqD=constructURL(req.body)
+          db.recipe.create({
+            user_id: req.body.user_id,
+            item: req.body.foods.toString(),
+          }).then((result) => {
+            console.log(result);
+          });
+          
+            const resData = await axios.get(reqD,{
+
+            })
             fetch(queryUrl, function (error, response, body) {
                 if (error) {console.log('error:', error);} // Print the error if one occurred
                 console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
@@ -77,3 +85,4 @@ module.exports = function(app){
     });
 
 }
+ )
