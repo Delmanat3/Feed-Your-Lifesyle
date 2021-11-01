@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS lifestyle_db;
+CREATE DATABASE IF NOT EXISTS lifestyle_db;
