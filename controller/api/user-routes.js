@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../testingpj2/models');
+const { User } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -12,9 +12,9 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
       res.status(200).json(dbUserData);
     });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -62,6 +62,14 @@ router.post('/login', async (req, res) => {
 // Logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
+    
+    // store searches into db before logging out
+    if(req.session.user.history) {
+      router.post('/user', async(req, res) => {
+        
+      })
+    }
+
     req.session.destroy(() => {
       res.status(204).end();
     });
