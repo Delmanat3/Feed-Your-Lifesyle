@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Delmanat3/Feed-Your-Lifesyle#readme",
   "dependencies": {
     "axios": "^0.24.0",
+    "express": "^4.17.1",
     "passport": "^0.5.0"
   }
 }
