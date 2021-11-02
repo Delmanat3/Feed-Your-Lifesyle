@@ -1,6 +1,6 @@
 // https://api.edamam.com/api/recipes/v2
 const path = require('path');
-const express = require('express');
+const express = require('express')
 //const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controller');
@@ -9,12 +9,12 @@ const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const PORT = 3001
+//const PORT = 3001
 
 const app = express()
 
 
-// const axios = require('axios')
+ const axios = require('axios')
 // app.use(passport.initialize());
 // app.use(passport.session());
 

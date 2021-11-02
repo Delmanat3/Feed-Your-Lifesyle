@@ -1,6 +1,7 @@
 const { default: axios } = require('axios');
 const router = require('express').Router();
-const { User } = require('../../models/user');
+const  User  = require('../../models/user');
+
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create(req.body);
@@ -61,7 +62,7 @@ function constructURL(data){
 }
 
 
-     app.post("/search", (req, res)=>{
+     router.post("/search", (req, res)=>{
         try{
             var queryUrl = constructURL(req.body);
             db.Recipe.create({
@@ -80,7 +81,7 @@ function constructURL(data){
             res.send(err);
         }
     });
-
+module.exports=router
 // app.post('/search',async (req)=>{try{const query=constructURL(req.body) const resData = await axios.get(query,{
 //         })
 //         if(!resData){
