@@ -5,19 +5,13 @@ const express = require('express')
 const exphbs = require('express-handlebars');
 const routes = require('./controller');
 // const helpers = require('./utils/helpers');
-<<<<<<< HEAD
+
 // const sequelize = require('./testingpj2/config/connection');
 // var passport = require("./config/passport");
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express()
 
-const PORT = 3301; 
 
-const axios = require('axios')
-app.use(passport.initialize());
-app.use(passport.session());
-=======
 const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
