@@ -6,17 +6,25 @@ const { Gallery, Painting } = require('../models');
 //Homepage display...Do we show all diet types on home page as clickable cards? 
 //Example: user could click the keto card to display all keto recipes.
 router.get('/', async (req, res) => {
-  try {
-    const recipeTypes = await Recipes.findAll()
-    // Send over the 'loggedIn' session variable to the 'homepage' template
-    res.render('homepage', {
-      galleries,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+  // try {
+  //   const dbGalleryData = await Gallery.findAll({
+  //     include: [
+  //       {
+  //         model: Painting,
+  //         attributes: ['filename', 'description'],
+  //       },
+  //     ],
+  //   });
+
+  //   const galleries = dbGalleryData.map((gallery) =>
+  //     gallery.get({ plain: true })
+  //   );
+
+    res.render('homepage')
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
 // Get all keto recipes
