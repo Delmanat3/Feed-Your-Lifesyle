@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const { default: axios } = require('axios');
 const { buffer } = require('stream/consumers');
-fs.writeFile
+
 async function  init(){
 
     const queryUrl='https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
@@ -16,7 +16,7 @@ async function  init(){
 
     console.log(data)
 
-    fs.writeFileSync('recipeData.json',data, (err) => {
+    fs.writeFile('recipeData.json',data, (err) => {
       if (err){
         console.log(err)
       }else{
@@ -26,5 +26,4 @@ async function  init(){
     });
     }
     init()
-   'https://api.edamam.com/api/recipes/v2?type=public&
-   &app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
+   

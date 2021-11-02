@@ -6,10 +6,10 @@ const exphbs = require('express-handlebars');
 const routes = require('./controller');
 // const helpers = require('./utils/helpers');
 
-// const sequelize = require('./testingpj2/config/connection');
+
 // var passport = require("./config/passport");
 
-const app = express()
+//const app = express()
 
 
 const sequelize = require('./config/connection');

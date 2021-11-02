@@ -1,21 +1,7 @@
 const { default: axios } = require('axios');
 const router = require('express').Router();
-const  User  = require('../../models/user');
+const User  = require('../../models/user');
 
-router.post('/', async (req, res) => {
-    try {
-      const userData = await User.create(req.body);
-  
-      req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.logged_in = true;
-  
-        res.status(200).json(userData);
-      });
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
 // Diet label: one of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”
 // Maximum number of ingredients. Example: ingr=5
 // “health=peanut-free&health=tree-nut-free”
@@ -65,12 +51,12 @@ function constructURL(data){
      router.post("/search", (req, res)=>{
         try{
             var queryUrl = constructURL(req.body);
-            db.Recipe.create({
+            User.create({
                 user_id: req.body.userId,
                 item: req.body.foods.toString(),}).then((result) => {console.log(result);});
-            axios.get(queryUrl,(error, response, body)=> {
-                if (error) {console.log('error:', error);} // Print the error if one occurred
-                console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            axios.get(queryUrl,(err,res)=> {
+                if (err) {console.log('error:', err);} // Print the error if one occurred
+                 // Print the response status code if a response was received
                 if (JSON.parse(body).count === 0){
                     res.send("No Recipes Found");
                 }else{
