@@ -1,7 +1,7 @@
 // https://api.edamam.com/api/recipes/v2
 const path = require('path');
-const express = require('express');
-const session = require('express-session');
+const express = require('express')
+//const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controller');
 // const helpers = require('./utils/helpers');
@@ -22,13 +22,13 @@ const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const PORT = 3001
+//const PORT = 3001
 
 const app = express()
 
 >>>>>>> 614535eb6d7f777c8a06706057b7c1e5a8ffb27f
 
-// const axios = require('axios')
+ const axios = require('axios')
 // app.use(passport.initialize());
 // app.use(passport.session());
 
@@ -70,8 +70,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-
- 
+const PORT = process.env.PORT || 3001; 
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
