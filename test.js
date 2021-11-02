@@ -5,6 +5,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controller');
 // const helpers = require('./utils/helpers');
+<<<<<<< HEAD
 // const sequelize = require('./testingpj2/config/connection');
 // var passport = require("./config/passport");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -16,9 +17,25 @@ const PORT = 3301;
 const axios = require('axios')
 app.use(passport.initialize());
 app.use(passport.session());
+=======
+const sequelize = require('./config/connection');
+// var passport = require("./config/passport");
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const hbs = exphbs.create({ helpers });
+const PORT = 3001
 
+const app = express()
+
+>>>>>>> 614535eb6d7f777c8a06706057b7c1e5a8ffb27f
+
+// const axios = require('axios')
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+
+const hbs = exphbs.create({ });
+
+<<<<<<< HEAD
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -30,8 +47,19 @@ const sess = {
     db: sequelize
   })
 };
+=======
+// const sess = {
+//   secret: 'Super secret secret',
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true,
+//   store: new SequelizeStore({
+//     db: sequelize
+//   })
+// };
+>>>>>>> 614535eb6d7f777c8a06706057b7c1e5a8ffb27f
 
-app.use(session(sess));
+// app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);

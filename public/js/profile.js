@@ -1,26 +1,46 @@
+const { default: axios } = require('axios');
+//TODO
+const alertModal=async(event)=>{
+event.preventDefault()
+$('modal script ')
+}
+// https://blog.logrocket.com/axios-or-fetch-api/
+// https://masteringjs.io/tutorials/axios/response-body
+// https://api.jquery.com/replaceWith/
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const recipe_id= $('#').val().trim();
+  const needed_funding = $('#project-funding').val().trim();
+  const description = $('#project-desc').val().trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  if (recipe_id && description) {
+    try{
+    const choice= {method:'POST',url:'/api/recipe',timeout: 4000, 
+  data:{name:this.name,needed_funding:this.needed_funding,description:this.description}
+};
+   await axios(choice,(req,res)=>{
+       console.log(req)
+       if(res){
+         $(window).replaceWith('/profile')
+       }else{
+        alertModal('Failed to create project');
+       }
+     })
+    
+      
+     
 
-    if (response.ok) {
-      $(window).replace('/profile');
-    } else {
-      alert('Failed to create project');
+      $(window).replaceWith('/homepage');
+     
+      }finally{
+        console.log('people are strange')
+      }
+    
+
     }
   }
-};
+
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -38,15 +58,14 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+$('.new-project-form').on('submit',newFormHandler)
+
 
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
   
-  $(document).ready(function () {
+  $().ready(()=> {
     var username = $("input.username")
     var email = $("input.email")
     var password = $("input.password")

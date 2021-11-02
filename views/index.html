@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-
-
-    <title>Document</title>
+    <title>Feed Your Lifestyle: Homepage</title>
 </head>
-<body>
-    <ul class="nav justify-content-end">
-        <h1>Feed your Lifestyle</h1>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-   
 
+<body>
+
+  <nav>
+    <ul class="nav nav-pills">
+      <h1>Feed your Lifestyle</h1>
+      <!-- Home Button -->
+      <li> <a href="/">Home</a> </li>
+      <!-- Recipe Search Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">low carb</a>
+          <a class="dropdown-item" href="#">vegan</a>
+          <a class="dropdown-item" href="#">keto</a>
+          <a class="dropdown-item" href="#">bulking</a>
+          <a class="dropdown-item" href="#">vegan</a>
+          <a class="dropdown-item" href="#">keto</a>
+        </div>
+      </li>
+      <li> Login placeholder
+          <!-- {{#if loggedIn}}
+          <button id="logout" class="btn-no-style">Logout</button>
+          {{else}} 
+          <a href="/login">Login</a>
+          {{/if}} -->
+      </li>
+    </ul>
+    </nav>
+   
         <style>
           .carousel-item {
               height:25rem;
@@ -41,92 +52,191 @@
               left: 0px;
               right: -750px;
               padding-top: 120px;
+    <h1 style="text-align: left; padding-top: 30px; padding-left: 30px;">Feed your Lifestyle</h1>
+    <ul class="nav justify-content-end">
 
 
-          }
-        </style>
-        <div id = "myCarousel" class = "carousel slide" data-ride ="carousel"> 
-            <ol class = "carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to ="0" class = "active"></li>
-                <li data-target="#myCarousel" data-slide-to ="1"></li>
-            </ol>
-        <div class ="carousel-inner">
+
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Recipes</a>
+        </li>
+    </ul>
 
 
+    <style>
+        .carousel-item {
+            height: 25rem;
+            background-color: #777;
+            color: white;
+            position: relative
+        }
+
+        .container {
+            position: absolute;
+
+
+            left: 0px;
+            right: -750px;
+            padding-top: 120px;
 
         <div class ="carousel-item active">
             <div class = "container">
                 <h1>Example Headline</h1>
                 <p>blah blah blah blah blah</p>
                 <a href="#" class ="btn btn-lg btn-primary">Sign up today</a>
-                
-
             </div>
-
         </div>
 
-        <div class ="carousel-item">
-            <div class = "container">
-                <h1>Example Headline</h1>
-                <p>blah blah blah blah blah</p>
-                <a href="#" class ="btn btn-lg btn-primary">Sign up today</a>
-                
+        }
+    </style>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
 
-            </div>
 
-        </div>
 
-        </div>
-        </div>
+            <div class="carousel-item active">
+                <div class="container">
+                    <h1>Example Headline</h1>
+                    <p>blah blah blah blah blah</p>
+                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
 
 
       <div class="card mb-3" style="width: auto; height: 250px;" >
         <div class="row no-gutters">
           <div class="col-md-4">
             <img style="height: 250px; width: 275px;" src="../assets/keto.jpg" alt="keto">
-        </div>
-          <div class="col-md-8">
-             <div class="card-body"> 
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-      </div>
+                </div>
 
-      <div class="card mb-3" style="width: auto; height: 250px;">
+            </div>
+
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>Example Headline</h1>
+                    <p>blah blah blah blah blah</p>
+                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
+
+
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>Example Headline</h1>
+                    <p>blah blah blah blah blah</p>
+                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
+
+
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>Example Headline</h1>
+                    <p>blah blah blah blah blah</p>
+                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="card mb-3" style="width: auto; height: 250px;">
         <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="..." alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="col-md-4">
+                <img style="height: 250px; width: 275px;" src="../assets/keto.jpg" alt="keto">
             </div>
-          </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="card mb-3" style="width: auto; height: 250px;">
+    <div class="card mb-3" style="width: auto; height: 250px;">
         <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="..." alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="col-md-4">
+                <img src="..." alt="...">
             </div>
-          </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
         </div>
-      </div>  
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    
+    </div>
 
+    <div class="card mb-3" style="width: auto; height: 250px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="..." alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+          <h2 style="padding-left: 500px;">Contact Us</h2>
+          <ul class="nav justify-content-center">
+              
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Nathan's Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sue's Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Brooke's Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mackenzie's Github</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Emilio's Github</a>
+            </li>
+        </ul>
+        
+  
+        
+        
+  
+        
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

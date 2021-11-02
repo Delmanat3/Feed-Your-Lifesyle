@@ -13,25 +13,16 @@
 //       primaryKey: true,
 //       autoIncrement: true,
 //     },
-//     // hits: {
-//     //   type: DataTypes.INTEGER,
-//     //   allowNull: false,
-//     //   unique: true,
-//     //   references: {
-//     //     model: 'recipe',
-//     //     key: 'id',
-//     //     },
-//     // },
+//     hits: {
+//       type: DataTypes.INTEGER,
+//       allowNull: false,
+//       unique: true,
+//       references: {
+//         model: 'recipe',
+//         key: 'id',
+//         },
+//     },
 //     image: {
-//         type: DataTypes.STRING,
-//     },
-//     diet: {
-//         type: DataTypes.STRING,
-//     },
-//     health: {
-//         type: DataTypes.STRING,
-//     },
-//     recipe: {
 //         type: DataTypes.STRING,
 //     },
 //     likes: {
