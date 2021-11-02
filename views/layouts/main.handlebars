@@ -28,6 +28,17 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Recipes</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search by Diet</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">low carb</a>
+            <a class="dropdown-item" href="#">vegan</a>
+            <a class="dropdown-item" href="#">keto</a>
+            <a class="dropdown-item" href="#">bulking</a>
+            <a class="dropdown-item" href="#">vegan</a>
+            <a class="dropdown-item" href="#">keto</a>
+          </div>
+        </li>
          <li> <!-- If user logged in, show logout button -->
             {{#if loggedIn}}
             <button id="logout" class="btn-no-style">Logout</button>
@@ -35,9 +46,24 @@
             <a href="/login">Login</a>
             {{/if}}
         </li>
-    </ul>
-    {{{body}}}
+      </ul>
+    </nav>
+
   
+  <main>
+    <aside>
+      <h2>Search by Diet type</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+
+  <!-- If the user is logged in, load the JS script for when they logout -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+   
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
