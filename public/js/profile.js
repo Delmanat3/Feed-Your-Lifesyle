@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
   const needed_funding = $('#project-funding').val().trim();
   const description = $('#project-desc').val().trim();
 
-  if (recipe_id &&  && description) {
+  if (recipe_id && description) {
     try{
     const choice= {method:'POST',url:'/api/recipe',timeout: 4000, 
   data:{name:this.name,needed_funding:this.needed_funding,description:this.description}
