@@ -26,8 +26,6 @@ const sequelize = require('./config/connection');
 
 const app = express()
 
->>>>>>> 614535eb6d7f777c8a06706057b7c1e5a8ffb27f
-
  const axios = require('axios')
 // app.use(passport.initialize());
 // app.use(passport.session());
@@ -35,19 +33,7 @@ const app = express()
 
 const hbs = exphbs.create({ });
 
-<<<<<<< HEAD
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {
-    
-  },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
-=======
+
 // const sess = {
 //   secret: 'Super secret secret',
 //   cookie: {},
@@ -57,8 +43,6 @@ const sess = {
 //     db: sequelize
 //   })
 // };
->>>>>>> 614535eb6d7f777c8a06706057b7c1e5a8ffb27f
-
 // app.use(session(sess));
 
 // Inform Express.js on which template engine to use
