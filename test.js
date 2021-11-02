@@ -11,7 +11,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express()
 
-const axios = require('axios')
+const { default: axios } = require('axios');
+app.use(axios)
 app.use(passport.initialize());
 app.use(passport.session());
 
