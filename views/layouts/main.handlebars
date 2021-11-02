@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum</title>
+  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Feed Your Lifestyle</h1>
+  </header>
+  
+<nav><h1>Feed your Lifestyle</h1>
+    <ul class="nav nav-pills flex-column flex-sm-row">
+
+        <!-- Home Button -->
+        <li> <a href="/">Home</a> </li>
+
+        <!-- Recipe Search Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search by Diet</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">low carb</a>
+            <a class="dropdown-item" href="#">vegan</a>
+            <a class="dropdown-item" href="#">keto</a>
+            <a class="dropdown-item" href="#">bulking</a>
+            <a class="dropdown-item" href="#">vegan</a>
+            <a class="dropdown-item" href="#">keto</a>
+          </div>
+        </li>
+
+        <li> <!-- If user logged in, show logout button -->
+            {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">Logout</button>
+            {{else}} <!-- Otherwise, show a link to login -->
+            <a href="/login">Login</a>
+            {{/if}}
+        </li>
+      </ul>
+    </nav>
+
+  
+  <main>
+    <aside>
+      <h2>Search by Diet type</h2>
+    </aside>
+    <div class="gallery">
+      {{{body}}}
+    </div>
+  </main>
+
+  <!-- If the user is logged in, load the JS script for when they logout -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
