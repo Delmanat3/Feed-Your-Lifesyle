@@ -23,3 +23,21 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+app.get('/search/', (req, res) => {
+  const url= 'https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
+          axios.get(url)
+          .then(response => {
+              console.log(response)
+            if (!response.data.hints.length) {
+              return res.send({
+                error: 'No food found'
+              })
+            }else{
+                  console.log('fuck') 
+            }
+         
+            res.send(JSON.stringify(response.data.hints))
+          })
+          .catch(error => res.sendStatus(error.response.status))
+      })
