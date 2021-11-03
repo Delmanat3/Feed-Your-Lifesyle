@@ -18,7 +18,7 @@ Deployment Date: TK
 
 # About the App
 Feed Your Lifestyle: Search recipes by diet and health concerns
-Our project team was tasked with ...
+Our project team was tasked with...
 
 ![App Demo](LINK TO BE ADDED HERE)
 
