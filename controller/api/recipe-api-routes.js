@@ -5,20 +5,18 @@ const User  = require('../../models/user');
 // Diet label: one of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”
 
 // “health=peanut-free&health=tree-nut-free”
+
 // cuisineType=chinese&cuisineType=indian”
+
 // “dishType=soup&dishType=dessert”
+
 // “calories=100-300” will return all recipes with which have between 100 and 300 kcal per serving.
+
 // function to construct URL passed for API
 
-
-
 const req=$('#opt1')
+
 req.datavalue.balanced
-
-
-
-
-
 
 function constructURL(data){
     if (data.foods){
@@ -63,7 +61,8 @@ function constructURL(data){
                 user_id: req.body.userId,
                 item: req.body.foods.toString(),
             }).then((result) => {
-                console.log(result);});
+                console.log(result);
+            });
 
             axios.get(queryUrl,(err,res)=> {
                 if (err) {console.log('error:', err);} // Print the error if one occurred

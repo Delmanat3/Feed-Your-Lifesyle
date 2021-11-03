@@ -3,18 +3,26 @@ const { default: axios } = require('axios');
 
 const newFormHandler = async (event) => {
   event.preventDefault();
+
   //const recipe_id= $('#').val().trim();
+
   const recDescription = $('#').val().trim();
 
   if (recipe_id && recDescription) {
     try{
+
     const choice= {
+      
       method:'POST' ,
+
        url:'/api/recipe',
+
        timeout: 4000, 
 
     data:{
+
     name:this.name,
+
     description:this.recDescription}
 };
    await axios(choice,(req,res)=>{
