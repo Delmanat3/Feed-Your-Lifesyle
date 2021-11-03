@@ -1,0 +1,26 @@
+.header{
+    text-align: left;
+    
+
+}
+
+.card-img {
+    display: flex;
+    max-height: 30%;
+    max-width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item {
+    height: 25rem;
+    background-color: #777;
+    color: white;
+    position: relative
+}
+
+.container {
+    position: absolute;
+    left: 0px;
+    right: -750px;
+    padding-top: 120px;

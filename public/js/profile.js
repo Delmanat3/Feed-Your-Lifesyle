@@ -1,32 +1,62 @@
+const { default: axios } = require('axios');
+
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  //const recipe_id= $('#').val().trim();
 
-  if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
-      method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const recDescription = $('#').val().trim();
 
-    if (response.ok) {
-      $(window).replace('/profile');
-    } else {
-      alert('Failed to create project');
+  if (recipe_id && recDescription) {
+    try{
+
+    const choice= {
+      
+      method:'POST' ,
+
+       url:'/api/recipe',
+
+       timeout: 4000, 
+
+    data:{
+
+    name:this.name,
+
+    description:this.recDescription}
+};
+   await axios(choice,(req,res)=>{
+       console.log(req)
+       if(res){
+         $(window).replaceWith('/profile')
+       }else{
+        alertModal('Failed to create project');
+       }
+     })
+
+
+  //    <div class="alert alert-dark" role="alert">
+  //    A simple dark alert—check it out!
+  //  </div>
+      
+     
+
+      $(window).replaceWith('/homepage');
+     
+      }finally{
+        console.log('people are strange')
+      }
+    
+
     }
   }
-};
+
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/recipe/${id}`, {
       method: 'DELETE',
     });
 
@@ -38,15 +68,11 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+$('.new-project-form').on('submit',newFormHandler)
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+$('.project-list').on('click', delButtonHandler);
   
-  $(document).ready(function () {
+  $().ready(()=> {
     var username = $("input.username")
     var email = $("input.email")
     var password = $("input.password")
@@ -74,7 +100,7 @@ document
     function submitUser(User) {
         $.post("/api/users", User)
             .then(function (res) {
-                window.location.replace(res);
+                $('window').replaceWith(res);
                 // If there's an error, handle it by throwing up a bootstrap alert
             }).catch(handleLoginErr);
     }

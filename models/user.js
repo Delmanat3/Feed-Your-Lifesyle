@@ -35,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    history: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   },
   {
     hooks: {
@@ -55,9 +59,10 @@ User.init(
     modelName: 'user',
   }
 );
-history.belongsTo(models.usertwos, {
-  foreignKey: {
-    allowNull: false
-  }
-});
+// history.belongsTo(models.usertwos, {
+//   foreignKey: {
+//     allowNull: false
+//   }
+// });
+
 module.exports = User;
