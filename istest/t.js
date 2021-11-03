@@ -15,7 +15,7 @@ const app = express()
     const data = await JSON.parse(db) 
 
     for (let i = 0; i < data.length; i++) {
-        const recData =data[i].recipe
+        const recData = data[i].recipe
         
         let label=recData['label'];
         let image=recData['image'];

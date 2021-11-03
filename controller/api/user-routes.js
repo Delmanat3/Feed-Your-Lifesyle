@@ -60,7 +60,7 @@ router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     
     // store searches into db before logging out
-    if(req.session.user.history) {
+    if(req.session.user.loggedIn) {
       router.post('/user', async(req, res) => {
 
       })
