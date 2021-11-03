@@ -1,12 +1,6 @@
 const { default: axios } = require('axios');
-//TODO
-const alertModal=async(event)=>{
-event.preventDefault()
-$('modal script ')
-}
-// https://blog.logrocket.com/axios-or-fetch-api/
-// https://masteringjs.io/tutorials/axios/response-body
-// https://api.jquery.com/replaceWith/
+
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -27,7 +21,11 @@ const newFormHandler = async (event) => {
         alertModal('Failed to create project');
        }
      })
-    
+
+
+  //    <div class="alert alert-dark" role="alert">
+  //    A simple dark alert—check it out!
+  //  </div>
       
      
 

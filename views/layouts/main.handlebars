@@ -42,16 +42,42 @@
         <a class="nav-link" href="#">Recipes</a>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search by Diet</a>
-        <div class="dropdown-menu">
-          <a id="opt1" data-value="balanced" class="dropdown-item" href="#">Balanced</a>
-          <a id="opt2" data-value="high-protein" class="dropdown-item" href="#">High-Protein</a>
-          <a id="opt3" data-value="low-carb" class="dropdown-item" href="#">Low Carb</a>
-          <a id="opt4" data-value="low-fat" class="dropdown-item" href="#">Low-Fat</a>
-          <a id="opt5" data-value="low-sodium" class="dropdown-item" href="#">Low-Sodium</a>
-        </div>
-      </li>
+
+
+{{!-- <li class="nav-item">
+      <a class="nav-link active" href="#">Login</a>
+</li> --}}
+        <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Recipes</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search by Diet</a>
+          <div class="dropdown-menu">
+            <a id="opt1" data-value="balanced" class="dropdown-item" href="#">Balanced</a>
+            <a id="opt2" data-value="high-protein"  class="dropdown-item" href="#">High-Protein</a>
+            <a id="opt3" data-value="low-carb" class="dropdown-item" href="#">Low Carb</a>
+            <a id="opt4" data-value="low-fat" class="dropdown-item" href="#">Low-Fat</a>
+            <a id="opt5" data-value="low-sodium" class="dropdown-item" href="#">Low-Sodium</a>
+          </div>
+        </li>
+        
+         <li> <!-- If user logged in, show logout button -->
+            {{#if loggedIn}}
+            <button id="logout" class="btn-no-style">Logout</button>
+            {{else}} <!-- Otherwise, show a link to login -->
+            <a class="nav-link" href="/login">Login</a>
+            {{/if}}
+        </li>
+
+      <form class="d-flex">
+        <input id="recipeSearch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      </ul>
     </nav>
 
 
