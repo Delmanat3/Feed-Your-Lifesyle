@@ -3,15 +3,16 @@ const fs= require('fs');
 const express = require('express')
 const app = express()
 
- async function start(){
-   try{
-    let labels=[];
-    let images=[];
-    let url1=[];
-    let diet2=[]
-    
-    const db=fs.readFileSync('../seeds/recipeData.json', 'utf8') 
+const labels=[];
+const images=[];
+const url1=[];
+const diet2=[]
 
+ const start = async ()=>{
+
+   try{
+     
+    const db=fs.readFileSync('./recipe.json', 'utf8') 
     const data = await JSON.parse(db) 
 
     for (let i = 0; i < data.length; i++) {
@@ -34,12 +35,18 @@ console.log(images)
 console.log(url1)
      
      
-   }catch(err){console.log(err)
-   }
+   }catch(err){console.log(err)}
 
 }
+start()
     
-module.exports=start()
+module.exports={
+  labels,
+  images,
+  url1,
+  diet2
+}
+
 
 
 

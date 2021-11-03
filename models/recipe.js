@@ -13,6 +13,7 @@ Recipe.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     hits: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -22,9 +23,11 @@ Recipe.init(
         key: 'id',
         },
     },
+
     image: {
         type: DataTypes.STRING,
     },
+    
     likes: {
         type: DataTypes.ARRAY(DataTypes.INTEGER),
         references: {

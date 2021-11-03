@@ -1,70 +1,60 @@
 const { default: axios } = require('axios');
 const router = require('express').Router();
 const User  = require('../../models/user');
+//const db = require('../../istest/t')
 
-// Diet label: one of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”
+    const labels=[];
+     const images=[];
+     const url1=[];
+     const diet2=[]
 
-// “health=peanut-free&health=tree-nut-free”
+const start = async ()=>{
 
-// cuisineType=chinese&cuisineType=indian”
+    try{
+     const db=fs.readFileSync('./recipe.json', 'utf8') 
+ 
+     const data = await JSON.parse(db) 
+ 
+     for (let i = 0; i < data.length; i++) {
+         const recData = data[i].recipe
+         
+         let label=recData['label'];
+         let image=recData['image'];
+         let url=recData['url'];
+         let diet=recData['dietLabels']
+ 
+         let dietLabels=diet.toString()
+         diet2.push(dietLabels)
+         labels.push(label)
+         images.push(image)
+         url1.push(url)
+     }
+   console.log(diet2)
+ console.log(labels)
+ console.log(images)
+ console.log(url1)
+      
+      
+    }catch(err){console.log(err)}
+ 
+ }
 
-// “dishType=soup&dishType=dessert”
+start()
 
-// “calories=100-300” will return all recipes with which have between 100 and 300 kcal per serving.
 
-// function to construct URL passed for API
 
-const req=$('#opt1')
 
-req.datavalue.balanced
-
-function constructURL(data){
-    if (data.foods){
-       const queryURL= "https://api.edamam.com/api/recipes/v2?type=public&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66&q="
-        var foods = data.foods.toString();
-        queryURL += foods;
-        if (data.diet){
-            //var diet1 = parseInt(data.diet);
-            if(data.diet){
-                queryURL += "&diet=";
-                queryURL +=  diet;
-            }else{
-                throw "diet type";
-            }
-        }
-        if (data.health){
-            if (typeof data.health !== "string"){
-                throw "health needs to be a String";
-            }else{
-                queryURL += "&health=";
-                queryURL += data.health;
-            }
-        }
-
-        if (data.recipeCount){
-            var recipeCount = parseInt(data.recipeCount);
-            if (recipeCount){
-                queryURL += "&to=";
-                queryURL += recipeCount;
-            }else{
-                throw "recipeCount needs to be an integer";
-            }
-        }
-    return queryURL;
-    }else{
-        throw"foods property is required"}
-}
-     router.post("/recipe", (req, res)=>{
-        try{
-            var queryUrl = constructURL(req.body);
-            User.create({
+router.post("/recipe", (req, res)=>{
+    try{
+        var queryUrl = constructURL(req.body);
+        User.create({
                 user_id: req.body.userId,
                 item: req.body.foods.toString(),
             }).then((result) => {
                 console.log(result);
             });
 
-            axios.get(queryUrl,(err,res)=> {
+            axios.get(db,(err,res)=> {
                 if (err) {console.log('error:', err);} // Print the error if one occurred
                  // Print the response status code if a response was received
                 if (JSON.parse(body).count === 0){
@@ -79,6 +69,10 @@ function constructURL(data){
     });
 
 module.exports=router
+
+
+
+
 
 // app.post('/search',async (req)=>{try{const query=constructURL(req.body) const resData = await axios.get(query,{
 //         })

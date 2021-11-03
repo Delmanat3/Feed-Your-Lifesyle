@@ -10,7 +10,7 @@ const routes = require('./controller');
 // var passport = require("./config/passport");
 
 //const app = express()
-
+const
 
 const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
