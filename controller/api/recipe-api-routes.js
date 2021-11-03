@@ -1,60 +1,50 @@
 const { default: axios } = require('axios');
 const router = require('express').Router();
 const User  = require('../../models/user');
-//const db = require('../../istest/t')
+const db = require('../../istest/t')
 
-    const labels=[];
-     const images=[];
-     const url1=[];
-     const diet2=[]
+    const labels=db.labels
+     const images=db.images
+     const url1=db.url1
+     const diet2=db.diet2
 
-const start = async ()=>{
+// &health=
 
+// fix url
+router.get('/:val',async (req,res)=>{
+
+console.log(req.params.val)
+// const url= 'https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
+
+const queryUrl=`https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
+
+let result= await axios.get(queryUrl)
+let result1 = result.data.hits
+
+res.json(result1)
+
+})
+
+
+
+router.post("/", async (req, res)=>{
     try{
-     const db=fs.readFileSync('./recipe.json', 'utf8') 
- 
-     const data = await JSON.parse(db) 
- 
-     for (let i = 0; i < data.length; i++) {
-         const recData = data[i].recipe
-         
-         let label=recData['label'];
-         let image=recData['image'];
-         let url=recData['url'];
-         let diet=recData['dietLabels']
- 
-         let dietLabels=diet.toString()
-         diet2.push(dietLabels)
-         labels.push(label)
-         images.push(image)
-         url1.push(url)
-     }
-   console.log(diet2)
- console.log(labels)
- console.log(images)
- console.log(url1)
-      
-      
-    }catch(err){console.log(err)}
- 
- }
-
-start()
-
-
-
-
-router.post("/recipe", (req, res)=>{
-    try{
-        var queryUrl = constructURL(req.body);
+        const quer = req.body;
+        const dbQuery=JSON.parse(quer.foods)
+        for (let i = 0; i < dbQuery.length; i++) {
+        const recData = dbQuery[i].recipe
+        }
+        console.log(recData)
+//req.session.?//id userid 
         User.create({
                 user_id: req.body.userId,
                 item: req.body.foods.toString(),
             }).then((result) => {
+
                 console.log(result);
             });
 
-            axios.get(db,(err,res)=> {
+            axios.get(db,(err,resp)=> {
                 if (err) {console.log('error:', err);} // Print the error if one occurred
                  // Print the response status code if a response was received
                 if (JSON.parse(body).count === 0){

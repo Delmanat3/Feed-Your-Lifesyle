@@ -9,15 +9,16 @@ router.get('/', async (req, res) => {
 
  try {
 
-  const label=t.label
+  const label=t.labels
   const images=t.images
   const url1= t.url1
   const diet2= t.diet2
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
 
+    //const galleries = dbGalleryData.map((gallery) =>
+     // gallery.get({ plain: true })
+   // );
+    
     res.render('homepage')
   } 
   catch (err) {

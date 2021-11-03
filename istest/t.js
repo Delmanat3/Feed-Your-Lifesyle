@@ -6,12 +6,12 @@ const app = express()
 const labels=[];
 const images=[];
 const url1=[];
-const diet2=[]
+const diet2=[];
 
  const start = async ()=>{
 
    try{
-     
+
     const db=fs.readFileSync('./recipe.json', 'utf8') 
     const data = await JSON.parse(db) 
 
@@ -38,7 +38,7 @@ console.log(url1)
    }catch(err){console.log(err)}
 
 }
-start()
+//start()
     
 module.exports={
   labels,

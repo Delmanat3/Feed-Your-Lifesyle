@@ -5,7 +5,7 @@ const express = require('express')
 const { default: axios } = require('axios');
 // const { buffer } = require('stream/consumers');
 async function  init(){
-  
+
     const queryUrl='https://api.edamam.com/api/recipes/v2?type=public&beta=false&q=pasta&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66&imageSize=LARGE&random=true&field=label&field=image&field=url&field=dietLabels'
 
     const resData = await axios.get(queryUrl)
@@ -25,5 +25,6 @@ async function  init(){
       
     });
     }
-    init()
+    
+    module.exports=init
    
