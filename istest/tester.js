@@ -27,6 +27,7 @@ const { default: axios } = require('axios');
 async function  init(){
 
 const queryUrl='https://api.edamam.com/api/recipes/v2?type=public&q=pasta&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
+
 const resData = await axios.get(queryUrl)
 
 const data2=resData.data.hits

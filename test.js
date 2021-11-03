@@ -11,7 +11,6 @@ const routes = require('./controller');
 
 //const app = express()
 
-
 const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);

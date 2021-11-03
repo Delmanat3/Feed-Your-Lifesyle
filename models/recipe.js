@@ -1,6 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+//DataTypes.ARRAY(/* DataTypes.SOMETHING */)  // Defines an array of DataTypes.SOMETHING. 
+//PostgreSQL only.
+
 class Recipe extends Model {
   
   }
@@ -13,25 +16,26 @@ Recipe.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    hits: {
-      type: DataTypes.INTEGER,
+
+    label: {
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      references: {
-        model: 'recipe',
-        key: 'id',
-        },
     },
+
     image: {
         type: DataTypes.STRING,
     },
-    likes: {
-        type: DataTypes.ARRAY(DataTypes.INTEGER),
+
+    user_id: {
+        type: DataTypes.STRING,
         references: {
             model: 'user',
             key: 'id',
         },
     },
+
+  
   },
   {
     sequelize,
@@ -41,5 +45,7 @@ Recipe.init(
     modelName: 'recipe',
   }
 );
+
+//turn entire db obj into string
 
 module.exports = Recipe;
