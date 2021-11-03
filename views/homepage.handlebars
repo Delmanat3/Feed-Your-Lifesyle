@@ -1,5 +1,4 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
+{{!-- Moved style to CSS file and tightened up file (deleted blank rows and did a "format document") --}}
 
 <head>
   <meta charset="UTF-8">
@@ -9,7 +8,7 @@
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <title>Document</title>
-</head> --}}
+</head> 
 {{!-- <body> --}}
 
   
@@ -52,31 +51,21 @@
                     <h1>Example Headline</h1>
                     <p>blah blah blah blah blah</p>
                     <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
                 </div>
-
-            </div>
-
-            <div class="carousel-item">
-                <div class="container">
-                    <h1>Example Headline</h1>
-                    <p>blah blah blah blah blah</p>
-                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
-                </div>
-
             </div>
             <div class="carousel-item">
                 <div class="container">
                     <h1>Example Headline</h1>
                     <p>blah blah blah blah blah</p>
                     <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
                 </div>
-
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>Example Headline</h1>
+                    <p>blah blah blah blah blah</p>
+                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
+                </div>
             </div>
             <div class="carousel-item">
                 <div class="container">
@@ -116,36 +105,31 @@
         </div>
     </div>
 
-    <div class="card mb-3" style="width: auto; height: 250px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="card mb-3" style="width: auto; height: 250px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
+{{!-- Three cards: Where do buttons in cards link? Are we calling on our database here to link to three different categories of recipes? I don't know which types we have. The only data I see in the recipeData.json are dietLabels. Not all entries have one but I see low-carb, high-fiber, balanced.  --}}
+
+    <div class="card-group">
+    <div class="card">
+      <img class = "card-img" src="../public/images/lowcarb.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Search low-carb recipes that suit a variety of lifestyles and health concerns.</p>
+        <a href="#" class="btn btn-lg btn-primary">Low-Carb Recipes</a>
+      </div>
+    </div>
+    <div class="card">
+        <img class = "card-img" src="../public/images/lowsodium.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Search low sodium-diets for health concerns such as high blood pressure.</p>
+          <a href="#" class="btn btn-lg btn-primary">Low-Sodium Recipes</a>
         </div>
+      </div>
+      <div class="card">
+        <img class = "card-img" src="../public/images/highfiber.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Search high-fiber diets to aid in digestion and detoxification. Fiber is an essential part of any diet! </p>
+          <a href="#" class="btn btn-lg btn-primary">High-Fiber Recipes</a>
+        </div>
+      </div>
     </div>
 
    

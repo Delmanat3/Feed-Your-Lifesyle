@@ -1,4 +1,7 @@
 const { default: axios } = require('axios');
+
+
+
 const showMe =  (result)=>{
 
     console.log(result);
@@ -20,9 +23,13 @@ const showMe =  (result)=>{
       var fullRecipe = $("<a>");
 
       //Add attributes to elements
+
       favButton.attr({
+
         name: recipeItem.label,
+
         class: "",
+
       });
 
       colDiv.attr({
@@ -82,8 +89,11 @@ const showMe =  (result)=>{
   };
 
 // loader function
+
 $().ready(()=>{
+
     $('#recipe-search-btn').on('click',(event)=>{
+
         event.preventDefault();
         $("#results").empty();
         // for loader spinny thing that does the stuff while things do the thing
@@ -108,8 +118,10 @@ $().ready(()=>{
           };
 
           let searchedRecipe = $("#searchRecipe").val();
+
           let searchedHealth=$('#health-param').val();
-          let searchedDiet=$('diet-param').val();
+
+          let searchedDiet= $('diet-param').val();
 
           axios.get("/api/users").done((result)=>{
             if (typeof result === "object"){// if axios call worked get the user id and associtate recipe query
@@ -120,7 +132,7 @@ $().ready(()=>{
                 diet:searchedDiet
 
               }
-              axios.post("/api/history",obj, (err,res) => {if(!res) throw err});// logs userid to history/recipe? model how does that work 
+              axios.post("/api/recipe",obj, (err,res) => {if(!res) throw err});// logs userid to history/recipe? model how does that work 
             }});
               console.log(searchedRecipe);
               foods.foods = searchedRecipe.split(" ");

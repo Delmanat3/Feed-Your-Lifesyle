@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node seeds/seed.js",
-    "start": "node test.js"
+    "start": "nodemon test.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
     "multer": "^1.4.3",
     "mysql2": "^2.3.2",
     "passport": "^0.5.0",
-    "sequelize": "^6.9.0",
-    "stream-consumers": "^0.1.0"
+    "sequelize": "^6.9.0"
   }
 }
