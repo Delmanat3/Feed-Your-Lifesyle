@@ -30,6 +30,7 @@ router.get('/recipes/:id', async (req, res) => {
     const dbGalleryData = await Recipes.findByPk(req.params.id, {
       
     });
+    []
     // Send over the 'loggedIn' session variable to the 'gallery' template
     res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -62,5 +63,8 @@ router.get('/login', (req, res) => {
   // Otherwise, render the 'login' template
   res.render('login');
 });
+
+
+
 
 module.exports = router;
