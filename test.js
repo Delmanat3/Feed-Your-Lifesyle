@@ -15,7 +15,7 @@ const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//const PORT = 3001
+// const PORT = 3001
 
 const app = express()
 
