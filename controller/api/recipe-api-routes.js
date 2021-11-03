@@ -22,7 +22,7 @@ let result= await axios.get(queryUrl)
 let result1 = result.data.hits
 
 res.json(result1)
-
+// console.log(result1)
 })
 
 
