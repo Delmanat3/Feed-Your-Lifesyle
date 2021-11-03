@@ -13,7 +13,7 @@ const db = require('../../istest/t')
 // fix url
 router.get('/:val',async (req,res)=>{
 
-console.log(req.params.val)
+//console.log(req.body)
 // const url= 'https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
 
 const queryUrl=`https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
