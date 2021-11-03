@@ -48,12 +48,12 @@
           by Diet</a>
         <div class="dropdown-menu">
           {{!-- req.session.user_id ish --}}
-
-          <a id="opt1" data-value="&diet=" class="dropdown-item" href="#">Balanced</a>
-          <a data-value="high-protein" class="dropdown-item" href="#">High-Protein</a>
-          <a data-value="low-carb" class="dropdown-item" href="#">Low Carb</a>
-          <a data-value="low-fat" class="dropdown-item" href="#">Low-Fat</a>
-          <a data-value="low-sodium" class="dropdown-item" href="#">Low-Sodium</a>
+          {{!-- Added class for valdrop js to use --}}
+          <a id="opt1" data-value="balanced" class="dropdown-item dropdown-option" href="#">Balanced</a>
+          <a data-value="high-protein" class="dropdown-item dropdown-option" href="#">High-Protein</a>
+          <a data-value="low-carb" class="dropdown-item dropdown-option" href="#">Low Carb</a>
+          <a data-value="low-fat" class="dropdown-item dropdown-option" href="#">Low-Fat</a>
+          <a data-value="low-sodium" class="dropdown-item dropdown-option" href="#">Low-Sodium</a>
         </div>
       </li>
 
@@ -67,10 +67,10 @@
         {{/if}}
       </li>
 
-      <form class="d-flex">
+      {{!-- <form class="d-flex">
         <input id="result" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button id="recipeSearch" class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> --}}
   </ul>
   </nav>
 
@@ -111,10 +111,8 @@
     </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
-
     </script>
-
-  <script src="/js/valdrop.js"></script>
+  <script src="js/valdrop.js"></script>
 </body>
 
 </html>
