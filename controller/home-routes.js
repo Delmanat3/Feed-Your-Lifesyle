@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const food = require("../assets");
 
 //TO DO: Change Gallery, Painting consts to whatever models we have in the models folder
 const { Gallery, Painting } = require('../models');
@@ -33,6 +34,7 @@ router.get('/recipes/:id', async (req, res) => {
     const dbGalleryData = await Recipes.findByPk(req.params.id, {
       
     });
+    []
     // Send over the 'loggedIn' session variable to the 'gallery' template
     res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -65,5 +67,8 @@ router.get('/login', (req, res) => {
   // Otherwise, render the 'login' template
   res.render('login');
 });
+
+
+
 
 module.exports = router;

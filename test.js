@@ -9,14 +9,16 @@ const routes = require('./controller');
 // const sequelize = require('./testingpj2/config/connection');
 // var passport = require("./config/passport");
 
-const app = express()
+// const app = express()
+
+
 
 
 const sequelize = require('./config/connection');
 // var passport = require("./config/passport");
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//const PORT = 3001
+// const PORT = 3001
 
 const app = express()
 
