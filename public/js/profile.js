@@ -3,19 +3,19 @@ const { default: axios } = require('axios');
 
 const newFormHandler = async (event) => {
   event.preventDefault();
+  //const recipe_id= $('#').val().trim();
+  const recDescription = $('#').val().trim();
 
-  const recipe_id= $('#').val().trim();
-  //const needed_funding = $('#project-funding').val().trim();
-  const description = $('#project-desc').val().trim();
-
-  if (recipe_id && description) {
+  if (recipe_id && recDescription) {
     try{
-    const choice= {method:'POST',url:'/api/recipe',timeout: 4000, 
+    const choice= {
+      method:'POST' ,
+       url:'/api/recipe',
+       timeout: 4000, 
 
-  data:{
+    data:{
     name:this.name,
-    needed_funding:this.needed_funding,
-    description:this.description}
+    description:this.recDescription}
 };
    await axios(choice,(req,res)=>{
        console.log(req)
@@ -48,7 +48,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/recipe/${id}`, {
       method: 'DELETE',
     });
 

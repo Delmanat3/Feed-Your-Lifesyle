@@ -9,7 +9,8 @@ const {User} = require('../models');
 //Example: user could click the keto card to display all keto recipes.
 router.get('/', async (req, res) => {
  try {
-    const topReel=await db.start()
+   
+    const topReel=await db.map(())
 
     const galleries = dbGalleryData.map((gallery) =>
       gallery.get({ plain: true })

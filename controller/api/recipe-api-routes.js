@@ -56,7 +56,7 @@ function constructURL(data){
     }else{
         throw"foods property is required"}
 }
-     router.post("/search", (req, res)=>{
+     router.post("/recipe", (req, res)=>{
         try{
             var queryUrl = constructURL(req.body);
             User.create({
