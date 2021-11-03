@@ -14,9 +14,7 @@
 <body>
   <h1 style="text-align: left; padding-top: 30px; padding-left: 30px;">Feed your Lifestyle</h1>
   <ul class="nav justify-content-end">
-
-
-    {{!-- Balanced balanced Protein/Fat/Carb values in 15/35/50 ratio
+{{!-- Balanced balanced Protein/Fat/Carb values in 15/35/50 ratio
     Diet High-Fiber high-fiber More than 5g fiber per serving
     Diet High-Protein high-protein More than 50% of total calories from proteins
     Diet Low-Carb low-carb Less than 20% of total calories from carbs
@@ -25,8 +23,19 @@
     <li class="nav-item">
       <a class="nav-link active" href="#">Login</a>
     </li> --}}
+    
+    {{!-- Login/Logout buttons moved to nav bar --}}
     <nav>
-      <li class="nav-item">
+       <li>
+      <!-- If user logged in, show logout button -->
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <!-- Otherwise, show a link to login -->
+      <a class="nav-link" href="/login">Login</a>
+      {{/if}}
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="#">Profile</a>
       </li>
       <li class="nav-item">
@@ -45,15 +54,8 @@
       </li>
     </nav>
 
-    <li>
-      <!-- If user logged in, show logout button -->
-      {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-      <!-- Otherwise, show a link to login -->
-      <a class="nav-link" href="/login">Login</a>
-      {{/if}}
-    </li>
+
+   
 
     {{!
     Does our dropdown menu feed into this search?
