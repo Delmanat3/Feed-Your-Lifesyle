@@ -3,12 +3,20 @@ const router = require('express').Router();
 const User  = require('../../models/user');
 
 // Diet label: one of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”
-// Maximum number of ingredients. Example: ingr=5
+
 // “health=peanut-free&health=tree-nut-free”
 // cuisineType=chinese&cuisineType=indian”
 // “dishType=soup&dishType=dessert”
 // “calories=100-300” will return all recipes with which have between 100 and 300 kcal per serving.
 // function to construct URL passed for API
+
+
+
+
+
+
+
+
 
 function constructURL(data){
     if (data.foods){
@@ -16,7 +24,9 @@ function constructURL(data){
         var foods = data.foods.toString();
         queryURL += foods;
         if (data.diet){
+
             //var diet1 = parseInt(data.diet);
+
             if(data.diet){
                 queryURL += "&diet=";
                 queryURL +=  diet;
@@ -51,7 +61,10 @@ function constructURL(data){
             var queryUrl = constructURL(req.body);
             User.create({
                 user_id: req.body.userId,
-                item: req.body.foods.toString(),}).then((result) => {console.log(result);});
+                item: req.body.foods.toString(),
+            }).then((result) => {
+                console.log(result);});
+
             axios.get(queryUrl,(err,res)=> {
                 if (err) {console.log('error:', err);} // Print the error if one occurred
                  // Print the response status code if a response was received
