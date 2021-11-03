@@ -2,20 +2,46 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="../public/css/style.css ">
-
-
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <title>Feed Your Lifestyle: Homepage</title>
 </head>
 
 <body>
-     <h1 style="text-align: left; padding-top: 30px; padding-left: 30px;">Feed your Lifestyle</h1>
-    <ul class="nav justify-content-end">
+  <h1 style="text-align: left; padding-top: 30px; padding-left: 30px;">Feed your Lifestyle</h1>
+  <ul class="nav justify-content-end">
+{{!-- Balanced balanced Protein/Fat/Carb values in 15/35/50 ratio
+    Diet High-Fiber high-fiber More than 5g fiber per serving
+    Diet High-Protein high-protein More than 50% of total calories from proteins
+    Diet Low-Carb low-carb Less than 20% of total calories from carbs
+    Diet Low-Fat low-fat Less than 15% of total calories from fat
+    Diet Low-Sodium
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Login</a>
+    </li> --}}
+    
+    {{!-- Login/Logout buttons moved to nav bar --}}
+    <nav>
+       <li>
+      <!-- If user logged in, show logout button -->
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <!-- Otherwise, show a link to login -->
+      <a class="nav-link" href="/login">Login</a>
+      {{/if}}
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Recipes</a>
+      </li>
+
 
 
 {{!-- <li class="nav-item">
@@ -56,15 +82,49 @@
       </ul>
     </nav>
 
-  
+
+   
+
+    {{!
+    Does our dropdown menu feed into this search?
+    Does anything else feed into this search? 
+    Does clicking this button lead the user to the view results.handlebars.}}
+    <form class="d-flex">
+      <input id="recipeSearch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </ul>
+  </nav>
+
+
+{{!-- By including the below in main.handlebars, our page will always have the h2 "Search by Diet Type". There's no user input related to this h2. 
+Is it supposed to relate to our three cards in the homepage.handlebars?--}}
   <main>
-    <aside>
+    {{!-- <aside>
       <h2>Search by Diet type</h2>
-    </aside>
+    </aside> --}}
     <div class="gallery">
-      {{{body}}}
+      {{{body}}}  
     </div>
   </main>
+
+
+
+  <footer>
+    <h2 style="padding-left: 500px;">Contact Us</h2>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"> <a class="nav-link active" href="https://github.com/Delmanat3">Nathan's Github</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/suelee0308">Sue's Github</a>
+        </li>
+        <li class="nav-item"> <a class="nav-link" href="https://github.com/jones406">Brooke's Github</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/mackenzieneveaux">Mackenzie's Github</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/Emilio512">Emilio's Github</a>
+        </li>
+      </ul>
+  </footer>
 
   <!-- If the user is logged in, load the JS script for when they logout -->
   {{#if loggedIn}}
@@ -77,6 +137,7 @@
    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+
     </script>
 
     <script src="/js/valdrop.js" ></script>

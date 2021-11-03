@@ -11,7 +11,7 @@ const withAuth = require('./utils/auth');
 //const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
-const session = require('express-session');
+//const session = require('express-session');
 
 
 const app = express()

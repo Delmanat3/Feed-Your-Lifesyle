@@ -1,4 +1,10 @@
-{{!DISPLAY -- image, title, ingredients, steps --}}
+{{!DISPLAY: with the recipeData.json we can pull in recipe.label (the recipe title) and the url for the image. We don't have ingrediets or step-by-step stuff yet.}}
+<section class="card">
+  <a href="/recipe/{{id}}">
+    <header>{{recipe.[0].label}}</header>
+    <img src="{{recipe.[0].image}}" alt="{{paintings.[0].label}}">
+  </a>
+</section>
 
 <div>
     <a href="/">Home</a>
