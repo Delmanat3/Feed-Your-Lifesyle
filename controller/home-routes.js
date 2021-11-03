@@ -10,7 +10,7 @@ const {User} = require('../models');
 router.get('/', async (req, res) => {
  try {
    
-    const topReel=await db.map(())
+    // const topReel=await db.map(())
 
     const galleries = dbGalleryData.map((gallery) =>
       gallery.get({ plain: true })
