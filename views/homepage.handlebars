@@ -1,26 +1,6 @@
-{{!-- Move style to CSS --}}
-    <style>
-        .carousel-item {
-            height: 25rem;
-            background-color: #777;
-            color: white;
-            position: relative
-        }
+{{!-- Moved style to CSS file and tightened up file (deleted blank rows and did a "format document") --}}
 
-        .container {
-            position: absolute;
-
-
-            left: 0px;
-            right: -750px;
-            padding-top: 120px;
-
-
-        }
-    </style>
-
-
-    
+{{!-- Where do the buttons in the carousel take the user? Are they supposed to route to create an account, which is the view in login.handlebars? --}}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -29,125 +9,61 @@
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner">
-
-
-
             <div class="carousel-item active">
                 <div class="container">
                     <h1>Example Headline</h1>
                     <p>blah blah blah blah blah</p>
                     <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
                 </div>
-
-            </div>
-
-            <div class="carousel-item">
-                <div class="container">
-                    <h1>Example Headline</h1>
-                    <p>blah blah blah blah blah</p>
-                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
-                </div>
-
             </div>
             <div class="carousel-item">
                 <div class="container">
                     <h1>Example Headline</h1>
                     <p>blah blah blah blah blah</p>
                     <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
                 </div>
-
             </div>
             <div class="carousel-item">
                 <div class="container">
                     <h1>Example Headline</h1>
                     <p>blah blah blah blah blah</p>
                     <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
-
-
                 </div>
-
             </div>
-
-        </div>
-    </div>
-    <div class="card mb-3" style="width: auto; height: 250px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img style="height: 250px; width: 275px;" src="../assets/keto.jpg" alt="keto">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <div class="carousel-item">
+                <div class="container">
+                    <h1>Example Headline</h1>
+                    <p>blah blah blah blah blah</p>
+                    <a href="#" class="btn btn-lg btn-primary">Sign up today</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="card mb-3" style="width: auto; height: 250px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
+
+{{!-- Three cards: Where do buttons in cards link? Are we calling on our database here to link to three different categories of recipes? I don't know which types we have. The only data I see in the recipeData.json are dietLabels. Not all entries have one but I see low-carb, high-fiber, balanced.  --}}
+
+    <div class="card-group">
+    <div class="card">
+      <img class = "card-img" src="../public/images/lowcarb.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Search low-carb recipes that suit a variety of lifestyles and health concerns.</p>
+        <a href="#" class="btn btn-lg btn-primary">Low-Carb Recipes</a>
+      </div>
     </div>
-
-    <div class="card mb-3" style="width: auto; height: 250px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="..." alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
+    <div class="card">
+        <img class = "card-img" src="../public/images/lowsodium.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Search low sodium-diets for health concerns such as high blood pressure.</p>
+          <a href="#" class="btn btn-lg btn-primary">Low-Sodium Recipes</a>
         </div>
+      </div>
+      <div class="card">
+        <img class = "card-img" src="../public/images/highfiber.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Search high-fiber diets to aid in digestion and detoxification. Fiber is an essential part of any diet! </p>
+          <a href="#" class="btn btn-lg btn-primary">High-Fiber Recipes</a>
+        </div>
+      </div>
     </div>
-
-   
-
-          <h2 style="padding-left: 500px;">Contact Us</h2>
-          <ul class="nav justify-content-center">
-              
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Nathan's Github</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sue's Github</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Brooke's Github</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Mackenzie's Github</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Emilio's Github</a>
-            </li>
-        </ul>
-    
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-</body>
-</html> --}}
+  </div>
