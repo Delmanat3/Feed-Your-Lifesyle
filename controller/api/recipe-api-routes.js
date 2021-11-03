@@ -1,70 +1,54 @@
 const { default: axios } = require('axios');
 const router = require('express').Router();
 const User  = require('../../models/user');
+const db = require('../../istest/t')
 
-// Diet label: one of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”
+    const labels=db.labels
+     const images=db.images
+     const url1=db.url1
+     const diet2=db.diet2
 
-// “health=peanut-free&health=tree-nut-free”
+// &health=
 
-// cuisineType=chinese&cuisineType=indian”
+// fix url
+router.get('/:val',async (req,res)=>{
 
-// “dishType=soup&dishType=dessert”
+console.log(req.params.val)
+// if else through all the dropdown menu options to complete url and give us result
+//
+// const url= 'https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
 
-// “calories=100-300” will return all recipes with which have between 100 and 300 kcal per serving.
+const queryUrl=`https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
 
-// function to construct URL passed for API
+let result= await axios.get(queryUrl)
+let result1 = result.data.hits
 
-const req=$('#opt1')
+res.json(result1)
+// return results
+//take the json object and append it do the handlebars
 
-req.datavalue.balanced
+})
 
-function constructURL(data){
-    if (data.foods){
-       const queryURL= "https://api.edamam.com/api/recipes/v2?type=public&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66&q="
-        var foods = data.foods.toString();
-        queryURL += foods;
-        if (data.diet){
-            //var diet1 = parseInt(data.diet);
-            if(data.diet){
-                queryURL += "&diet=";
-                queryURL +=  diet;
-            }else{
-                throw "diet type";
-            }
+
+
+router.post("/", async (req, res)=>{
+    try{
+        const quer = req.body;
+        const dbQuery=JSON.parse(quer.foods)
+        for (let i = 0; i < dbQuery.length; i++) {
+        const recData = dbQuery[i].recipe
         }
-        if (data.health){
-            if (typeof data.health !== "string"){
-                throw "health needs to be a String";
-            }else{
-                queryURL += "&health=";
-                queryURL += data.health;
-            }
-        }
-
-        if (data.recipeCount){
-            var recipeCount = parseInt(data.recipeCount);
-            if (recipeCount){
-                queryURL += "&to=";
-                queryURL += recipeCount;
-            }else{
-                throw "recipeCount needs to be an integer";
-            }
-        }
-    return queryURL;
-    }else{
-        throw"foods property is required"}
-}
-     router.post("/recipe", (req, res)=>{
-        try{
-            var queryUrl = constructURL(req.body);
-            User.create({
+        console.log(recData)
+//req.session.?//id userid 
+        User.create({
                 user_id: req.body.userId,
                 item: req.body.foods.toString(),
             }).then((result) => {
+
                 console.log(result);
             });
 
-            axios.get(queryUrl,(err,res)=> {
+            axios.get(db,(err,resp)=> {
                 if (err) {console.log('error:', err);} // Print the error if one occurred
                  // Print the response status code if a response was received
                 if (JSON.parse(body).count === 0){
@@ -79,6 +63,10 @@ function constructURL(data){
     });
 
 module.exports=router
+
+
+
+
 
 // app.post('/search',async (req)=>{try{const query=constructURL(req.body) const resData = await axios.get(query,{
 //         })

@@ -35,10 +35,14 @@ User.init(
         len: [8],
       },
     },
-    history: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    }
+    // recipe_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references:{
+    //     model:'recipe',
+    //     key:'id'
+    //   }
+    // }
   },
   {
     hooks: {

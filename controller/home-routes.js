@@ -1,21 +1,25 @@
 const router = require('express').Router();
-const db=require('../istest/t')
+const t=require('../istest/t')
 //TO DO: Change Gallery, Painting consts to whatever models we have in the models folder
 
 const {User} = require('../models');
 
 
-//Homepage display...Do we show all diet types on home page as clickable cards? 
-//Example: user could click the keto card to display all keto recipes.
 router.get('/', async (req, res) => {
+
  try {
-   
-    const topReel=await db.map(())
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
 
+  const label=t.labels
+  const images=t.images
+  const url1= t.url1
+  const diet2= t.diet2
+
+
+    //const galleries = dbGalleryData.map((gallery) =>
+     // gallery.get({ plain: true })
+   // );
+    
     res.render('homepage')
   } 
   catch (err) {
@@ -30,6 +34,7 @@ router.get('/recipes/:id', async (req, res) => {
     const dbGalleryData = await Recipes.findByPk(req.params.id, {
       
     });
+    []
     // Send over the 'loggedIn' session variable to the 'gallery' template
     res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -62,5 +67,8 @@ router.get('/login', (req, res) => {
   // Otherwise, render the 'login' template
   res.render('login');
 });
+
+
+
 
 module.exports = router;

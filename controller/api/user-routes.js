@@ -12,8 +12,9 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(userData);
     });
-
+//may need to use res.render instead of lines at bottom of profile.js 
   } catch (err) {
+
     res.status(400).json(err);
   }
 });
