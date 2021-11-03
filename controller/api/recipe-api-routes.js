@@ -12,6 +12,8 @@ const User  = require('../../models/user');
 
 
 
+const req=$('#opt1')
+req.datavalue.balanced
 
 
 
@@ -24,9 +26,7 @@ function constructURL(data){
         var foods = data.foods.toString();
         queryURL += foods;
         if (data.diet){
-
             //var diet1 = parseInt(data.diet);
-
             if(data.diet){
                 queryURL += "&diet=";
                 queryURL +=  diet;

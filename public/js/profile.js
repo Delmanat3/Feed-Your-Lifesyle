@@ -5,13 +5,17 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const recipe_id= $('#').val().trim();
-  const needed_funding = $('#project-funding').val().trim();
+  //const needed_funding = $('#project-funding').val().trim();
   const description = $('#project-desc').val().trim();
 
   if (recipe_id && description) {
     try{
     const choice= {method:'POST',url:'/api/recipe',timeout: 4000, 
-  data:{name:this.name,needed_funding:this.needed_funding,description:this.description}
+
+  data:{
+    name:this.name,
+    needed_funding:this.needed_funding,
+    description:this.description}
 };
    await axios(choice,(req,res)=>{
        console.log(req)
@@ -58,10 +62,7 @@ const delButtonHandler = async (event) => {
 
 $('.new-project-form').on('submit',newFormHandler)
 
-
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+$('.project-list').on('click', delButtonHandler);
   
   $().ready(()=> {
     var username = $("input.username")
@@ -91,7 +92,7 @@ document
     function submitUser(User) {
         $.post("/api/users", User)
             .then(function (res) {
-                window.location.replace(res);
+                $('window').replaceWith(res);
                 // If there's an error, handle it by throwing up a bootstrap alert
             }).catch(handleLoginErr);
     }

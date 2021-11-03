@@ -4,12 +4,17 @@ const db=require('../istest/t')
 
 const {User} = require('../models');
 
+
 //Homepage display...Do we show all diet types on home page as clickable cards? 
 //Example: user could click the keto card to display all keto recipes.
 router.get('/', async (req, res) => {
  try {
-   
     const topReel=await db.start()
+
+    const galleries = dbGalleryData.map((gallery) =>
+      gallery.get({ plain: true })
+    );
+
     res.render('homepage')
   } 
   catch (err) {
