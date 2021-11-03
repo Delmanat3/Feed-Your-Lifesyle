@@ -46,8 +46,6 @@ function constructURL(data){
     }else{
         throw"foods property is required"}
 }
-
-
      router.post("/search", (req, res)=>{
         try{
             var queryUrl = constructURL(req.body);
@@ -67,7 +65,9 @@ function constructURL(data){
             res.send(err);
         }
     });
+
 module.exports=router
+
 // app.post('/search',async (req)=>{try{const query=constructURL(req.body) const resData = await axios.get(query,{
 //         })
 //         if(!resData){

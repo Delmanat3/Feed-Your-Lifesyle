@@ -120,7 +120,7 @@ $().ready(()=>{
                 diet:searchedDiet
 
               }
-              axios.post("/api/history",obj, (err,res) => {if(!res) throw err});// logs userid to history/recipe? model how does that work 
+              axios.post("/api/recipe",obj, (err,res) => {if(!res) throw err});// logs userid to history/recipe? model how does that work 
             }});
               console.log(searchedRecipe);
               foods.foods = searchedRecipe.split(" ");
