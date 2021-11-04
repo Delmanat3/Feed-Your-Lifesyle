@@ -7,15 +7,20 @@ router.post('/', async (req, res) => {
     const userData = await User.create(req.body);
 
     req.session.save(() => {
+
       req.session.user_id = userData.id;
+
       req.session.logged_in = true;
 
       res.status(200).json(userData);
     });
 //may need to use res.render instead of lines at bottom of profile.js 
   } catch (err) {
+
     console.log(err);
+
     res.status(400).json(err);
+
   }
 });
 // Login

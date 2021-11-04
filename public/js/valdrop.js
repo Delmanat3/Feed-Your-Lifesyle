@@ -35,6 +35,7 @@ dropdownArr.forEach((el) => {
             recipeList.empty()
         res.map((item,i) => {
             recipeList.append(`
+
             <div class="card justify-content-center" style="width: 18rem;">
             <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
             <div class="card-body">
@@ -43,6 +44,7 @@ dropdownArr.forEach((el) => {
           </div>
         `
         )
+
 
         });
             // res.render('recipe')
