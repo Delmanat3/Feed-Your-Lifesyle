@@ -1,7 +1,15 @@
 .header{
     text-align: left;
-    
+}
 
+h1 {
+    font-family: 'Sarina', cursive;
+    font-size: 60px;
+}
+
+h5 h2 {
+    font-family: 'Arvo', serif;
+    font-size: 27px;
 }
 
 .card-img {
