@@ -1,16 +1,29 @@
-
+console.log("val drop")
 //to do: change keto string to be coming from the dropdown
 
-$('#recipeSearch').on('click',(e)=>{
-e.preventDefault()
-//const valTee=()=>{
-$.get('/api/recipe/' + 'keto').then(
-(res)=>{
-    console.log(res)
-}
-)
-//}
-//valTee('keto')
-console.log('keto');
+//main is only talking this file. Even listener is on dropdown menu click.
+// .each() grabs every node element that has dropdown-option class of dropdown-optoin (everything in dropdown menu). 
+//el.attr("data-value") grabs the data-value attribute from the dropdown choice that was clicked. Response is then coverted and console logged.
+
+let dropdownArr = $('.dropdown-option').toArray()
+console.log(dropdownArr)
+
+dropdownArr.forEach((el) => {
+    // console.log(el)
+    $(el).click(e => {
+        e.preventDefault()
+        $.get('/api/recipe/' + $(el).attr("data-value"))
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            if (err) console.log(err)
+        })
+    })
 })
+
 //const resData = await axios.get(queryUrl)
+
+// catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
