@@ -16,7 +16,6 @@ $("#result").empty();
             health : '',
             diet: '',
             calories: 1000
-
           };
 
           let searchedRecipe = $("#searchRecipe").val();

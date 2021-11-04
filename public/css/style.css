@@ -16,7 +16,9 @@
     height: 25rem;
     background-color: #777;
     color: white;
-    position: relative
+    position: relative;
+    background-position: center;
+    background-size: cover;
 }
 
 .container {
@@ -24,4 +26,9 @@
     left: 0px;
     right: -750px;
     padding-top: 120px;
+}
+
+.card-img {
+    background-position: center;
+    background-size: cover;
 }
