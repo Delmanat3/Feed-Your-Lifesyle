@@ -3,7 +3,6 @@ console.log("val drop")
 
 //main is only talking this file. Even listener is on dropdown menu click.
 /*
-
  $.el.table(
  $.el.tr(
    $.el.th('first name'),
@@ -11,7 +10,6 @@ console.log("val drop")
  $.el.tr(
    $.el.td('Joe'),
    $.el.td('Stelmach'))
-   
 ).appendTo(document.body);
 
  */
@@ -19,11 +17,10 @@ console.log("val drop")
 // .each() grabs every node element that has dropdown-option class of dropdown-optoin (everything in dropdown menu). 
 //el.attr("data-value") grabs the data-value attribute from the dropdown choice that was clicked. Response is then coverted and console logged.
 
-let dropdownArr = $('.dropdown-option').toArray();
+let dropdownArr = $('.dropdown-option').toArray()
 
 console.log(dropdownArr)
-
-dropdownArr.Each((el) => {
+dropdownArr.forEach((el) => {
     // console.log(el)
     $(el).click(e => {
         e.preventDefault()
@@ -37,7 +34,7 @@ dropdownArr.Each((el) => {
     })
 })
 
-// const resData = await axios.get(queryUrl)
+//const resData = await axios.get(queryUrl)
 
 // catch (err) {
 //     console.log(err);
