@@ -35,7 +35,7 @@ const db = require('../../istest/t');
 router.get('/:val', async (req, res) => {
 
     // localhost:3000/api/recipe/val
-    console.log(req.params.val)
+    //console.log(req.params.val)
     // const url= 'https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
 
     //replace fries
@@ -43,25 +43,27 @@ router.get('/:val', async (req, res) => {
 
     //TO DO: need to hide api key and app id using .env
   
-    
-
-        let result = await axios.get(queryUrl)
-        if(result){
-            ()=>{
-                let result1 = result.data.hits
-                var x= res.json(result1)
-                res.render('recipe',{
-                 x 
-             })
-            }
-         
-        }else{
-        res.status(400).json(err)
-        return;
+    try{
+        const result = await axios.get(queryUrl)
+        //console.log(result)
+        let result1 = result.data.hits
+        //console.log(result1)
+        //let result2=JSON.parse(result1)
+        //console.log(result2)
+        
+    // let x= res.json(result2)
+       console.log(result1)
+      // res.json(result1)
+        res.render('recipe',
+        result1)
+        
+    }catch(err){
+        console.log(err)
+        return
     }
    
  
-    //res.json(result1)
+   // console.log(result1)
 })
 
 
