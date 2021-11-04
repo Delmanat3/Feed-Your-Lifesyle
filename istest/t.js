@@ -49,7 +49,20 @@ module.exports={
 
 
 
+/**  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search
+          by Diet</a>
+        <div class="dropdown-menu">
+          {{!-- req.session.user_id ish --}}
 
+          {{!-- Added class for valdrop js to use --}}
+          <a id="opt1" data-value="balanced" class="dropdown-item dropdown-option" href="#">Balanced</a>
+          <a data-value="high-protein" class="dropdown-item dropdown-option" href="#">High-Protein</a>
+          <a data-value="low-carb" class="dropdown-item dropdown-option" href="#">Low Carb</a>
+          <a data-value="low-fat" class="dropdown-item dropdown-option" href="#">Low-Fat</a>
+          <a data-value="low-sodium" class="dropdown-item dropdown-option" href="#">Low-Sodium</a>
+        </div>
+      </li> */
 // const { fs } = require('fs');
 
 // fs.readFile(db, 'utf8', function (err, data) {
