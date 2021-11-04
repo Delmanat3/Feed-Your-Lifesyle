@@ -35,14 +35,14 @@ dropdownArr.forEach((el) => {
             recipeList.empty()
         res.map((item,i) => {
             recipeList.append(`
-
-            <div class=" card col-sm-12 col-md-4 col-lg-3" style='background-image: url(${item.recipe.image })'>
-            <div>
-                
-                <a href=${item.recipe.url}><h2>${item.recipe.label}</h2></a>
+            <div class="card justify-content-center" style="width: 18rem;">
+            <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
+            <div class="card-body">
+            <a href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
             </div>
-            </div>
-        `)
+          </div>
+        `
+        )
 
         });
             // res.render('recipe')

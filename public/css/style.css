@@ -1,8 +1,6 @@
-
-}
-
-.header{
+nav {
     text-align: left;
+    background-color: rgb(213,228,183);
 }
 
 h1 {
@@ -24,11 +22,6 @@ p {
     font-size: 20px;
 }
 
-.card-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .carousel-item {
     height: 25rem;
@@ -48,15 +41,30 @@ p {
 }
 
 .card-img {
-    background-position: center;
-    background-size: cover;
-
+    object-fit: cover;
 }
 
 footer {
+    background-color: rgb(213,228,183);
     text-align: center;
     width: 100%;
-    z-index: 1;
+    bottom: 0;
+    position: fixed;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+#savebutton {
+  color:black;
+}
+
+#searchbydiet {
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+}
+    /* z-index: 1; 
   }
 
 .login-card {
@@ -64,3 +72,10 @@ footer {
     margin: auto;
 }
 
+#recipeList {
+    font-size: 2rem;
+}
+
+/*  */
+
+  
