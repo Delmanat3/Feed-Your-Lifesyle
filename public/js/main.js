@@ -85,5 +85,5 @@ const showMe =  (result)=>{
 
   };
 
-loader function
+// loader function
 

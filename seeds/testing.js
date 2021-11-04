@@ -1,12 +1,6 @@
 const express = require('express')
 const app = express()
 const axios = require('axios')
-
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
  
     app.get('/foods/:name', (req, res) => {
     const url = `https://api.edamam.com/api/food-database/parser?app_id=adc6f730&app_key=1c36192c8df25e1cdb4a6f66853b9236&ingr=${req.params.name}`
