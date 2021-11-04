@@ -1,4 +1,6 @@
 
+//to do: change keto string to be coming from the dropdown
+
 $('#recipeSearch').on('click',(e)=>{
 e.preventDefault()
 //const valTee=()=>{

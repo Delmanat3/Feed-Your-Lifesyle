@@ -1,7 +1,5 @@
 const { default: axios } = require('axios');
 
-
-
 const showMe =  (result)=>{
 
     console.log(result);
@@ -23,7 +21,6 @@ const showMe =  (result)=>{
       var fullRecipe = $("<a>");
 
       //Add attributes to elements
-
       favButton.attr({
 
         name: recipeItem.label,
@@ -89,4 +86,3 @@ const showMe =  (result)=>{
   };
 
 // loader function
-
