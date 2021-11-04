@@ -21,61 +21,52 @@
 
 <body>
   <h1 style="text-align: left; padding-top: 30px; padding-left: 30px;">Feed your Lifestyle</h1>
-  <ul class="nav justify-content-end">
+ 
 
-    <nav class="navbar">
+    <nav class="nav navbar justify-content-end">
       
       <li class="nav-item">
         <a class="nav-link" href="#">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Recipes</a>
+        <a class="nav-link" href="/recipe">Recipes</a>
       </li>
 
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Search
-          by Diet</a>
-        <div class="dropdown-menu">
-          {{!-- req.session.user_id ish --}}
-
-          {{!-- Added class for valdrop js to use --}}
-          <a id="opt1" data-value="balanced" class="dropdown-item dropdown-option" href="#">Balanced</a>
-          <a data-value="high-protein" class="dropdown-item dropdown-option" href="#">High-Protein</a>
-          <a data-value="low-carb" class="dropdown-item dropdown-option" href="#">Low Carb</a>
-          <a data-value="low-fat" class="dropdown-item dropdown-option" href="#">Low-Fat</a>
-          <a data-value="low-sodium" class="dropdown-item dropdown-option" href="#">Low-Sodium</a>
-        </div>
-      </li>
 
       <li>
         <!-- If user logged in, show logout button -->
         {{#if logged_in}}
-        <button id="logout" class="btn-no-style">Logout</button>
+        <a id="logout" class="nav-link">Logout</a>
         {{else}}
         <!-- Otherwise, show a link to login -->
         <a class="nav-link" href="/login">Login</a>
         {{/if}}
       </li>
+    </nav>
 
+   <main>
+
+  {{{body}}}
+
+   </main>   
+  
       {{!-- <form class="d-flex">
         <input id="result" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button id="recipeSearch" class="btn btn-outline-success" type="submit">Search</button>
       </form> --}}
-  </nav>
 
-  <main>
+  {{!-- <main> --}}
     {{!-- <aside>
       <h2>Search by Diet type</h2>
     </aside> --}}
-    <div class="gallery">
-      {{{body}}}
-    </div>
-  </main>
+    {{!-- <div class="gallery"> --}}
+   
+    {{!-- </div> --}}
+  {{!-- </main> --}}
 
   <footer>
-    <h2 class="row text-center" style="padding-left: 500px;">Contact Us</h2>
-    <ul class="row text-center nav justify-content-center">
+    <h2>Contact Us</h2>
+    <ul class="nav justify-content-center">
       <li class="nav-item"><a class="nav-link active" href="https://github.com/Delmanat3">Nathan's Github</a>
       </li>
       <li class="nav-item"><a class="nav-link" href="https://github.com/suelee0308">Sue's Github</a>
@@ -87,8 +78,8 @@
       <li class="nav-item"><a class="nav-link" href="https://github.com/Emilio512">Emilio's Github</a>
       </li>
     </ul>
-    <div id="edamam-badge" class="row text-center" data-color="white" style="text-align: center;"></div>
-<script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <div id="edamam-badge" data-color="white"></div>
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
   </footer>
 
   <!-- If the user is logged in, load the JS script for when they logout -->
@@ -109,17 +100,3 @@
 </body>
 
 </html>
-
-
-
-{{!-- Balanced balanced Protein/Fat/Carb values in 15/35/50 ratio
-Diet High-Fiber high-fiber More than 5g fiber per serving
-Diet High-Protein high-protein More than 50% of total calories from proteins
-Diet Low-Carb low-carb Less than 20% of total calories from carbs
-Diet Low-Fat low-fat Less than 15% of total calories from fat
-Diet Low-Sodium
-<li class="nav-item">
-  <a class="nav-link active" href="#">Login</a>
-</li> --}}
-
-{{!-- Login/Logout buttons moved to nav bar --}}

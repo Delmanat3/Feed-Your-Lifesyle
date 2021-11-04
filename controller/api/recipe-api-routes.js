@@ -14,15 +14,12 @@ router.get('/:val', async (req, res) => {
     try{
         const result = await axios.get(queryUrl)
         let result1 = result.data.hits
-        res.render('recipe',
-        result1)
+        res.json(result1)
         
     }catch(err){
         console.log(err)
         return
     }
-   
-
 })
 
 module.exports = router

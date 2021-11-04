@@ -17,20 +17,34 @@ console.log("val drop")
 // .each() grabs every node element that has dropdown-option class of dropdown-optoin (everything in dropdown menu). 
 //el.attr("data-value") grabs the data-value attribute from the dropdown choice that was clicked. Response is then coverted and console logged.
 
+// const recipeBtn=$('#recipesBtn')
+
+// recipeBtn.on('click')
+
+let recipeList=$('#recipeList')
+
 let dropdownArr = $('.dropdown-option').toArray()
-
-console.log(dropdownArr)
-
+// console.log(dropdownArr)
 dropdownArr.forEach((el) => {
-
     // console.log(el)
     $(el).click(e => {
         e.preventDefault()
         $.get('/api/recipe/' + $(el).attr("data-value"))
-       
         .then(res => {
             console.log(res)
-            //const projects = res.map((result2) => result2.get({ plain: true }));
+            recipeList.empty()
+        res.map((item,i) => {
+            recipeList.append(`
+
+            <div class=" card col-sm-12 col-md-4 col-lg-3" style='background-image: url(${item.recipe.image })'>
+            <div>
+                
+                <a href=${item.recipe.url}><h2>${item.recipe.label}</h2></a>
+            </div>
+            </div>
+        `)
+
+        });
             // res.render('recipe')
         })
         .catch(err => {

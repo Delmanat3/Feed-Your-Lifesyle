@@ -86,7 +86,3 @@ const showMe =  (result)=>{
   };
 
 // loader function
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a65fb16cd4d799a0ab5dde8ea1ab595875c3549

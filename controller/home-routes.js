@@ -1,25 +1,15 @@
 const router = require('express').Router();
 const t=require('../istest/t')
+const { default: axios } = require('axios');
+
 //TO DO: Change Gallery, Painting consts to whatever models we have in the models folder
 
 const {User} = require('../models');
-//const {Recipe} = require('../models');
+
 
 router.get('/', async (req, res) => {
 
  try {
-
-
-  const label=t.labels
-  const images=t.images
-  const url1= t.url1
-  const diet2= t.diet2
-
-
-    //const galleries = dbGalleryData.map((gallery) =>
-     // gallery.get({ plain: true })
-   // );
-    
     res.render('homepage', {logged_in: req.session.logged_in})
   } 
   catch (err) {
@@ -28,21 +18,55 @@ router.get('/', async (req, res) => {
    }
 });
 
+
+
+router.get('/recipe/', async (req, res) => {
+  // const queryUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${req.params.val}&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
+
+  //TO DO: need to hide api key and app id using .env
+  try{
+    
+     res.render('recipe')
+  }catch(err){
+      console.log(err)
+      return
+  }
+ 
+});
+
 // Get all keto recipes
-// router.get('/recipe/:val', async (req, res) => {
+// router.get('/recipe/', async (req, res) => {
 //   try {
-//     const dbGalleryData = await Recipe.findAll(req.body, {
+//     const dbGalleryData = await Recipes.findByPk(where:
       
 //     });
 //     []
 //     // Send over the 'loggedIn' session variable to the 'gallery' template
-//     res.render('recipe', { Recipe, logged_in: req.session.logged_in });
+//     res.render('recipe', { recipe, logged_in: req.session.logged_in });
 //   } catch (err) {
 //     console.log(err);
 //     res.status(500).json(err);
 //   }
 // });
 
+/**router.get('/recipe/:val', async (req, res) => {
+  const queryUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${req.params.val}&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
+
+  //TO DO: need to hide api key and app id using .env
+  try{
+      const result = await axios.get(queryUrl)
+      
+      let result1 = result.data.hits
+    console.log(result1)
+      res.render('recipe',{
+      result1})
+      
+  }catch(err){
+      console.log(err)
+      return
+  }
+ 
+}); */
 // // GET one keto recipe 
 // router.get('/recipe/keto/:id', async (req, res) => {
 //   try {
@@ -56,7 +80,6 @@ router.get('/', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
-
 // Login route
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect to the homepage
