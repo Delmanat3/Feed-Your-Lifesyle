@@ -24,7 +24,7 @@ $("#result").empty();
 
         //   let searchedDiet= $('diet-param').val();
 
-          axios.get("/api/users").done((result)=>{
+          axios.get("/api/users/").done((result)=>{
             if (typeof result === "object"){// if axios call worked get the user id and associtate recipe query
               let obj = {
 
@@ -35,7 +35,7 @@ $("#result").empty();
         
               }
 
-              axios.post("/api/recipe",obj, (err,res) => {if(!res) throw err});// logs userid to history/recipe? model how does that work 
+              axios.post("/api/****/",obj, (err,res) => {if(!res) throw err});// logs userid to history/recipe? model how does that work 
             }});
 
               console.log(searchedRecipe);

@@ -35,10 +35,7 @@ const newFormHandler = async (event) => {
      })
 
 
-  //    <div class="alert alert-dark" role="alert">
-  //    A simple dark alert—check it out!
-  //  </div>
-      
+     
      
 
       $(window).replaceWith('/homepage');
@@ -101,6 +98,7 @@ $('.project-list').on('click', delButtonHandler);
         $.post("/api/users", User)
             .then(function (res) {
                 $('window').replaceWith(res);
+
                 // If there's an error, handle it by throwing up a bootstrap alert
             }).catch(handleLoginErr);
     }
