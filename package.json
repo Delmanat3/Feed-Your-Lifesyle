@@ -8,10 +8,12 @@
     "seed": "node seeds/seed.js",
     "start": "nodemon test.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Delmanat3/Feed-Your-Lifesyle.git"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",

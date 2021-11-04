@@ -5,6 +5,33 @@ const t=require('../istest/t')
 const {User} = require('../models');
 
 
+
+
+router.get('/api/recipe/:val', async (req, res) => {
+
+    // localhost:3000/api/recipe/val
+    console.log(req.params.val)
+    //replace fries
+    // const url= 'https://api.edamam.com/api/recipes/v2?type=public&q=fries&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66'
+
+    const queryUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${req.params.val}&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
+
+    //TO DO: need to hide api key and app id using .env
+    let result = await axios.get(queryUrl)
+    let recipeDig = result.data.hits
+
+    res.json(recipeDig)
+    .then(() => {
+        
+    })
+     console.log(recipeDig)
+}) 
+
+
+
+
+
+
 router.get('/', async (req, res) => {
 
  try {

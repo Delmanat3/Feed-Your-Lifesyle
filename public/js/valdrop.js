@@ -2,13 +2,28 @@ console.log("val drop")
 //to do: change keto string to be coming from the dropdown
 
 //main is only talking this file. Even listener is on dropdown menu click.
+/*
+
+ $.el.table(
+ $.el.tr(
+   $.el.th('first name'),
+   $.el.th('last name')),
+ $.el.tr(
+   $.el.td('Joe'),
+   $.el.td('Stelmach'))
+   
+).appendTo(document.body);
+
+ */
+
 // .each() grabs every node element that has dropdown-option class of dropdown-optoin (everything in dropdown menu). 
 //el.attr("data-value") grabs the data-value attribute from the dropdown choice that was clicked. Response is then coverted and console logged.
 
-let dropdownArr = $('.dropdown-option').toArray()
+let dropdownArr = $('.dropdown-option').toArray();
+
 console.log(dropdownArr)
 
-dropdownArr.forEach((el) => {
+dropdownArr.Each((el) => {
     // console.log(el)
     $(el).click(e => {
         e.preventDefault()
@@ -22,7 +37,7 @@ dropdownArr.forEach((el) => {
     })
 })
 
-//const resData = await axios.get(queryUrl)
+// const resData = await axios.get(queryUrl)
 
 // catch (err) {
 //     console.log(err);
