@@ -1,8 +1,22 @@
-nav {
-    text-align: left;
-    background-color: rgb(213,228,183);
+body {
+    whitesmoke;
 }
 
+nav {
+    text-align: left;
+    background-color: whitesmoke;
+    color: rgb(85,139,88);
+    
+}
+
+#sitetitle {
+    text-align: left;
+    padding-left: 5rem;
+    padding-top: 1.5rem;
+}
+#navlinks {
+    padding-right: 2rem;
+}
 h1 {
     font-family: 'Sarina', cursive;
     font-size: 60px;
@@ -42,10 +56,13 @@ p {
 
 .card-img {
     object-fit: cover;
+    overflow: hidden;
+    max-height: 17rem;
+    
 }
 
 footer {
-    background-color: rgb(213,228,183);
+    background-color: whitesmoke;
     text-align: center;
     width: 100%;
     bottom: 0;
