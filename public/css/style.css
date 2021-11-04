@@ -6,10 +6,19 @@ h1 {
     font-family: 'Sarina', cursive;
     font-size: 60px;
 }
-
-h5 h2 {
+h2 {
     font-family: 'Arvo', serif;
-    font-size: 27px;
+    font-size: 40px;
+}
+
+a {
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+}
+
+p {
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
 }
 
 .card-img {
