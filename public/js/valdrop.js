@@ -27,11 +27,11 @@ dropdownArr.forEach((el) => {
     $(el).click(e => {
         e.preventDefault()
         $.get('/api/recipe/' + $(el).attr("data-value"))
-
+       
         .then(res => {
             console.log(res)
             //const projects = res.map((result2) => result2.get({ plain: true }));
-            //res.render('recipe')
+            // res.render('recipe')
         })
         .catch(err => {
             if (err) console.log(err)
@@ -39,9 +39,3 @@ dropdownArr.forEach((el) => {
         })
     })
 })
-
-//const resData = await axios.get(queryUrl)
-
-// catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);

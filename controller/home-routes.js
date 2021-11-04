@@ -3,7 +3,7 @@ const t=require('../istest/t')
 //TO DO: Change Gallery, Painting consts to whatever models we have in the models folder
 
 const {User} = require('../models');
-
+//const {Recipe} = require('../models');
 
 router.get('/', async (req, res) => {
 
@@ -29,19 +29,19 @@ router.get('/', async (req, res) => {
 });
 
 // Get all keto recipes
-router.get('/recipe/:id', async (req, res) => {
-  try {
-    const dbGalleryData = await Recipes.findByPk(req.params.id, {
+// router.get('/recipe/:val', async (req, res) => {
+//   try {
+//     const dbGalleryData = await Recipe.findAll(req.body, {
       
-    });
-    []
-    // Send over the 'loggedIn' session variable to the 'gallery' template
-    res.render('recipe', { recipe, logged_in: req.session.logged_in });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     });
+//     []
+//     // Send over the 'loggedIn' session variable to the 'gallery' template
+//     res.render('recipe', { Recipe, logged_in: req.session.logged_in });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // // GET one keto recipe 
 // router.get('/recipe/keto/:id', async (req, res) => {
