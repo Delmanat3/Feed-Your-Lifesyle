@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     });
 //may need to use res.render instead of lines at bottom of profile.js 
   } catch (err) {
-
+    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -44,7 +44,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.logged_in = true;
 
       res
         .status(200)
@@ -58,14 +59,14 @@ router.post('/login', async (req, res) => {
 
 // Logout
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     
     // store searches into db before logging out
-    if(req.session.user.loggedIn) {
-      router.post('/user', async(req, res) => {
+    // if(req.session.user.logged_in) {
+    //   router.post('/user', async(req, res) => {
 
-      })
-    }
+    //   })
+    // }
 
     req.session.destroy(() => {
       res.status(204).end();

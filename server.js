@@ -1,17 +1,11 @@
-// https://api.edamam.com/api/recipes/v2
 const path = require('path');
-const express = require('express')
+const express = require('express');
 const exphbs = require('express-handlebars');
 const routes = require('./controller');
 const sequelize = require('./config/connection');
-
+const session = require('express-session');
 const withAuth = require('./utils/auth');
-
-
-//const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-
-//const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const app = express()
@@ -19,15 +13,16 @@ const axios = require('axios')
 const hbs = exphbs.create({ });
 
 
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize
-//   })
-// };
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+app.use(session(sess));
 
 // app.use(session(sess));
 

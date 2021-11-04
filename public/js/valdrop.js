@@ -26,17 +26,17 @@ dropdownArr.forEach((el) => {
     // console.log(el)
     $(el).click(e => {
         e.preventDefault()
-        $.post('/api/recipe/' + $(el).attr("data-value"))
+        $.get('/api/recipe/' + $(el).attr("data-value"))
 
-        // .then(res => {
-        //     console.log(res)
-        //     //const projects = res.map((result2) => result2.get({ plain: true }));
-        //     //res.render('recipe')
-        // })
-        // .catch(err => {
-        //     if (err) console.log(err)
+        .then(res => {
+            console.log(res)
+            //const projects = res.map((result2) => result2.get({ plain: true }));
+            //res.render('recipe')
+        })
+        .catch(err => {
+            if (err) console.log(err)
             
-        // })
+        })
     })
 })
 

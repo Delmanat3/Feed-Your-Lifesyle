@@ -3,7 +3,7 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
 const email=$('#email-login').val().trim();
-const password=$('password-login').val().trim();
+const password=$('#password-login').val().trim();
   
   if (email && password) {
     // Send a POST request to the API endpoint
@@ -15,7 +15,8 @@ const password=$('password-login').val().trim();
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      $(window).replaceWith('/profile');
+      document.location.replace('/');
+      // replace / with profile later
     } else {
       alert(response.statusText);
     }
@@ -25,9 +26,9 @@ const password=$('password-login').val().trim();
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name=$('#name-signup').val().trim();
+  const name=$('#username-signup').val().trim();
   const email=$('#email-signup').val().trim();
-  const password=$('password-signup').val().trim();
+  const password=$('#password-signup').val().trim();
 
   if (name && email && password) {
     const response = await fetch('/api/users', {
@@ -37,7 +38,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      $(window).replaceWith('/profile');
+     document.location.replace('/');
+    //  change homepage to profile later once profile view is set up
     } else {
       alert(response.statusText);
     }
