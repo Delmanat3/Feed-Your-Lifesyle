@@ -25,19 +25,3 @@ or step-by-step stuff yet
 <div id="recipeList" class="row" >
 </div>
 
-
-
-
-<div>
-    <a href="/">Home</a>
-    <!-- If the user is logged in, allow them to save a recipe -->
-    {{#if logged_in}}
-    <button id="save-recipe" class="btn-no-style">Save</button>
-    {{else}}
-    
-    <!-- Otherwise, show a link to login -->
-    <a href="/login">Login</a>
-    {{/if}}
-  </div>
-
-<script src="js/valdrop.js"></script>

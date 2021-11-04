@@ -15,7 +15,7 @@ const password=$('#password-login').val().trim();
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/');
+      document.location.replace('/recipe');
       // replace / with profile later
     } else {
       alert(response.statusText);
@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-     document.location.replace('/');
+     document.location.replace('/recipe');
     //  change homepage to profile later once profile view is set up
     } else {
       alert(response.statusText);

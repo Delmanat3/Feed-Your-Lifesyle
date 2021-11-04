@@ -25,8 +25,7 @@ router.get('/recipe/', async (req, res) => {
 
   //TO DO: need to hide api key and app id using .env
   try{
-    
-     res.render('recipe')
+     res.render('recipe', {logged_in: req.session.logged_in})
   }catch(err){
       console.log(err)
       return
@@ -34,39 +33,22 @@ router.get('/recipe/', async (req, res) => {
  
 });
 
-// Get all keto recipes
-// router.get('/recipe/', async (req, res) => {
+// // Get all keto recipes
+// router.get('/', async (req, res) => {
 //   try {
-//     const dbGalleryData = await Recipes.findByPk(where:
+//    // const dbGalleryData = await Recipes.findByPk(req.params.id, {
       
-//     });
-//     []
+//    // });
+//     //[]
 //     // Send over the 'loggedIn' session variable to the 'gallery' template
-//     res.render('recipe', { recipe, logged_in: req.session.logged_in });
+//     res.render('recipe', {logged_in: req.session.logged_in });
 //   } catch (err) {
 //     console.log(err);
 //     res.status(500).json(err);
 //   }
 // });
 
-/**router.get('/recipe/:val', async (req, res) => {
-  const queryUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${req.params.val}&app_id=7f405668&app_key=eda4d42231735830901807b91c947c66`
 
-  //TO DO: need to hide api key and app id using .env
-  try{
-      const result = await axios.get(queryUrl)
-      
-      let result1 = result.data.hits
-    console.log(result1)
-      res.render('recipe',{
-      result1})
-      
-  }catch(err){
-      console.log(err)
-      return
-  }
- 
-}); */
 // // GET one keto recipe 
 // router.get('/recipe/keto/:id', async (req, res) => {
 //   try {
@@ -80,6 +62,7 @@ router.get('/recipe/', async (req, res) => {
 //     res.status(500).json(err);
 //   }
 // });
+
 // Login route
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect to the homepage

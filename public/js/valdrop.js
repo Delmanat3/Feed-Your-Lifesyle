@@ -38,10 +38,9 @@ dropdownArr.forEach((el) => {
 
             <div class=" card col-sm-12 col-md-4 col-lg-3" style='background-image: url(${item.recipe.image })'>
             <div>
-                
-                <a href=${item.recipe.url}><h2>${item.recipe.label}</h2></a>
+            <a href=${item.recipe.url} target='blank'><h2>${item.recipe.label}</h2></a>
             </div>
-            </div>
+            </div> 
         `)
 
         });
