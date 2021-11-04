@@ -1,5 +1,5 @@
 
-}
+
 
 .header{
     text-align: left;
@@ -61,6 +61,26 @@ footer {
 
 .login-card {
     text-align: left;
-    margin: auto;
+    margin-left: 500px;
+}
+
+.login-card2{
+    margin-right: -100px;
+}
+
+.form-login{
+    width:150px;
+}
+
+#email-signup{
+    margin-left:35px;
+}
+
+.update{
+    margin-left:-50px;
+    padding-right:20px;
+}
+.page-title1{
+    margin-left: -25px;
 }
 
