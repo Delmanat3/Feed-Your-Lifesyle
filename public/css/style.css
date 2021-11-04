@@ -46,15 +46,21 @@ p {
     padding-top: 120px;
     padding-bottom: 10rem;
 }
-/* 
+
 .card-img {
     background-position: center;
     background-size: cover;
 
 }
 
+footer {
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+  }
+
 .login-card {
     text-align: left;
     margin: auto;
-
 }
+
