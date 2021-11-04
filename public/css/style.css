@@ -49,3 +49,9 @@ p {
     background-position: center;
     background-size: cover;
 }
+
+.login-card {
+    text-align: left;
+    margin: auto;
+
+}
