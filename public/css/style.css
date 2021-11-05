@@ -1,13 +1,11 @@
 
 body {
-    whitesmoke;
+    background-color: whitesmoke;
 }
 
 nav {
-    text-align: left;
     background-color: whitesmoke;
     color: rgb(85,139,88);
-    
 }
 
 #sitetitle {
@@ -37,6 +35,9 @@ p {
     font-size: 20px;
 }
 
+#recipeList {
+    justify-content: center;
+}
 
 .carousel-item {
     height: 25rem;
@@ -67,12 +68,18 @@ footer {
     text-align: center;
     width: 100%;
     bottom: 0;
-    position: fixed;
+    margin-bottom: 0px;
 }
 
 ul {
     list-style-type: none;
   }
+
+
+.card {
+    border-radius: 15px;
+    margin: 10px; 
+}
 
 #savebutton {
   color:black;
@@ -82,6 +89,7 @@ ul {
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
 }
+
 
 .login-card {
 padding-top: 3rem;
@@ -117,4 +125,3 @@ padding-top: 3rem;
 }
 
 
-  
