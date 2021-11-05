@@ -34,11 +34,28 @@ or step-by-step stuff yet
   
   {{/if}}
 </div>
-  
+
+<!-- history div -->
+      <div class="container row hide history">
+        <div class="col s12 m8 l9">
+          <h2 class="header">History</h2>
+          <div class="card horizontal small">
+            <div class="card-stacked">
+              <div class="card-content">
+                <div>
+                  <button class="right">
+                    <i class="material-icons center" id="exit-history">clear</i>
+                  </button>
+                </div>
+                <ul id="historyUl"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 {{!-- This is where our results populate --}}
 <div id="recipeList" class="row"></div>
 
 
 <script src="js/valdrop.js"></script>
-

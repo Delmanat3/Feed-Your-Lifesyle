@@ -36,17 +36,26 @@ dropdownArr.forEach((el) => {
         res.map((item,i) => {
             recipeList.append(`
 
-            <div class="card justify-content-center" style="width: 18rem;">
+            <div  class="card justify-content-center" style="width: 18rem;">
             <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
             <div class="card-body">
-            <a href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
+            <a href=${item.recipe.url}><h4 id="results" >${item.recipe.label}</h4></a>
             </div>
+            <button id = "savebutton" class = "save-button">Save</button>
           </div>
         `
+
+        )}
+        ).then(()=>{
+           const savebutton = $('#savebutton');
+            savebutton.on('click', function (e) {
+            const savedrecipes = $('#results').val()
+            const savedrecipes1 = localStorage.setItem('savedrecipes')
+            console.log(savedrecipes)
+        })
+        }  
         )
-
-
-        });
+        ;
             // res.render('recipe')
         })
         .catch(err => {
@@ -55,3 +64,16 @@ dropdownArr.forEach((el) => {
         })
     })
 })
+
+
+// historyBtn.addEventListener('click', function (event) {
+//     historyUl.innerHTML = <a href=${item.recipe.url}><h4 id="results" >${item.recipe.label}</h4></a>
+//      //set item to json storage -- set item to local storage on button click
+//     history.classList.remove('hide');
+//     history.classList.add('hide');
+// });
+
+// exitBtn.addEventListener('click', function (event) {
+//     history.classList.remove('hide');
+//     history.classList.add('hide');
+// })

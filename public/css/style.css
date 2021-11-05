@@ -82,17 +82,19 @@ ul {
     font-family: 'Questrial', sans-serif;
     font-size: 20px;
 }
-    /* z-index: 1; 
-  }
 
 .login-card {
+padding-top: 3rem;
+}
+
+/* .login-card {
     text-align: left;
     margin-left: 500px;
 }
 
 .login-card2{
     margin-right: -100px;
-}
+} */
 
 .form-login{
     width:150px;
@@ -114,6 +116,5 @@ ul {
     font-size: 2rem;
 }
 
-/*  */
 
   
