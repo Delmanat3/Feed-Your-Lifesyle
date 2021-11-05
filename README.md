@@ -1,5 +1,5 @@
 # Feed Your Lifestyle
-##  Project 2: ...
+##  Project 2:
 
 URL: TK 
 Version 1.0  
@@ -21,12 +21,24 @@ Feed Your Lifestyle: Search recipes by diet and health concerns
 Our project team was tasked with...
 
 ![App Demo](LINK TO BE ADDED HERE)
+# Main Page
+![Main Page](/public/images/mainpage.jpg)
+# Login Page
+![Main Page](/public/images/login.jpg)
+# Recipe Page
+![Main Page](/public/images/recipes.jpg)
+
 
 # User Story
 ```md
 AS a user with specified health and diet concerns,
 I WANT information about recipes that match my lifestyle
 SO that I can be healthier and reach my goal.
+I WANT to save my facorite recipes
+SO I can go back to look at them later.
+I WANT login functionality 
+SO I can go  back and see my recipes
+
 ```
 
 # Acceptance Criteria
@@ -59,26 +71,37 @@ THEN my recipe is are in local storage
 WHEN I refresh the page
 THEN my saved data persist
 
-TK
-TK
-TK
-TK
-
 ```
 
 # Project Constraints
-* ....
-* ....
-* ....
-* ....
+* Using a third party API to seed our DB
+* Pinpointing an MVP. 
+Had so many ideas and goals at the beginning.
+
+* Group's unfamiliarity with Handlebars
+* GitHub troll
 
 # APIs Used
-TK link
+[API Link](https://developer.edamam.com/)
+
+# Technology Used
+HTML
+CSS
+JAVASCRIPT
+EXPRESS.JS
+NODE.JS
+SQL
+SEQUALIZE
+AXIOS
+BOOTSTRAP
+HANDLEBARS.JS
+
+
 
 # Future Development
 Beyond our MVP:
-goal 1
-goal 2
+* Allow the user access to more types of diets and individual foods
+* Allow more user interactions like comments, posting recipes, etc.
 
 # Contributors:   
 Nathan Delman:
