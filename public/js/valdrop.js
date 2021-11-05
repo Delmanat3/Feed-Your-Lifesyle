@@ -34,15 +34,19 @@ dropdownArr.forEach((el) => {
             recipeList.empty()
         res.map((item,i) => {
             recipeList.append(`
+
         <div class="card justify-content-center" style="width: 18rem;">
             <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
             <div class="card-body btnGrab">
             <a id="a${i}" href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
             <button data-value=${item.recipe.url} class="BtnToGrab btn btn-primary" id="${i}">Save</button>
+
             </div>
+            <button id = "savebutton" class = "save-button">Save</button>
           </div>
         `
         )
+
         })
             // res.render('recipe')
         }).then(()=>{  
@@ -68,3 +72,16 @@ dropdownArr.forEach((el) => {
         })
     })
 })
+
+
+// historyBtn.addEventListener('click', function (event) {
+//     historyUl.innerHTML = <a href=${item.recipe.url}><h4 id="results" >${item.recipe.label}</h4></a>
+//      //set item to json storage -- set item to local storage on button click
+//     history.classList.remove('hide');
+//     history.classList.add('hide');
+// });
+
+// exitBtn.addEventListener('click', function (event) {
+//     history.classList.remove('hide');
+//     history.classList.add('hide');
+// })
