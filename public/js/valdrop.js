@@ -42,7 +42,6 @@ dropdownArr.forEach((el) => {
             <button data-value=${item.recipe.url} class="BtnToGrab btn btn-primary" id="${i}">Save</button>
 
             </div>
-            <button id = "savebutton" class = "save-button">Save</button>
           </div>
         `
         )
