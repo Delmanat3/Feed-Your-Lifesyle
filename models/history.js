@@ -39,4 +39,3 @@ UserData.init(
   }
 );
 
-module.exports = UserData;

@@ -20,7 +20,6 @@ console.log("val drop")
 // const recipeBtn=$('#recipesBtn')
 
 // recipeBtn.on('click')
-
 let recipeList=$('#recipeList')
 
 let dropdownArr = $('.dropdown-option').toArray()
@@ -36,22 +35,53 @@ dropdownArr.forEach((el) => {
         res.map((item,i) => {
             recipeList.append(`
 
-            <div class="card justify-content-center" style="width: 18rem;">
+        <div class="card justify-content-center" style="width: 18rem;">
             <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
-            <div class="card-body">
-            <a href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
+            <div class="card-body btnGrab">
+            <a id="a${i}" href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
+            <button data-value=${item.recipe.url} class="BtnToGrab btn btn-primary" id="${i}">Save</button>
+
             </div>
+            <button id = "savebutton" class = "save-button">Save</button>
           </div>
         `
         )
 
-
-        });
-            // res.render('recipe')
         })
+            // res.render('recipe')
+        }).then(()=>{  
+            
+            let histor=$('#history')
+
+            let arr1=[]
+           
+            $('.btnGrab').click($('.BtnToGrab'),
+             (e)=>{    
+             e.preventDefault()
+             arr1.push($(e.target).data("value"))
+             console.log(arr1)
+             histor.append(arr1)
+            })
+             
+            }
+            
+        )
         .catch(err => {
             if (err) console.log(err)
             
         })
     })
 })
+
+
+// historyBtn.addEventListener('click', function (event) {
+//     historyUl.innerHTML = <a href=${item.recipe.url}><h4 id="results" >${item.recipe.label}</h4></a>
+//      //set item to json storage -- set item to local storage on button click
+//     history.classList.remove('hide');
+//     history.classList.add('hide');
+// });
+
+// exitBtn.addEventListener('click', function (event) {
+//     history.classList.remove('hide');
+//     history.classList.add('hide');
+// })
