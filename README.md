@@ -1,9 +1,8 @@
 # Feed Your Lifestyle
-##  Project 2:
 
-URL: TK 
-Version 1.0  
-Deployment Date: TK
+* URL: https://feed-your-lifestyle.herokuapp.com/
+* Version 1.0  
+* Deployment Date: November 5, 2021
 
 
 # Table of Contents
@@ -20,13 +19,12 @@ Deployment Date: TK
 Feed Your Lifestyle: Search recipes by diet and health concerns
 Our project team was tasked with...
 
-![App Demo](LINK TO BE ADDED HERE)
 # Main Page
-![Main Page](/public/images/mainpage.jpg)
+![Main Page](/public/images/mainpage.png)
 # Login Page
-![Main Page](/public/images/login.jpg)
+![Main Page](/public/images/login.png)
 # Recipe Page
-![Main Page](/public/images/recipes.jpg)
+![Main Page](/public/images/recipes.png)
 
 
 # User Story
@@ -76,8 +74,7 @@ THEN my saved data persist
 # Project Constraints
 * Using a third party API to seed our DB
 * Pinpointing an MVP. 
-Had so many ideas and goals at the beginning.
-
+* Had so many ideas and goals at the beginning.
 * Group's unfamiliarity with Handlebars
 * GitHub troll
 
@@ -85,17 +82,19 @@ Had so many ideas and goals at the beginning.
 [API Link](https://developer.edamam.com/)
 
 # Technology Used
-HTML
-CSS
-JAVASCRIPT
-EXPRESS.JS
-NODE.JS
-SQL
-SEQUALIZE
-AXIOS
-BOOTSTRAP
-HANDLEBARS.JS
+- HTML
+- CSS
+- JAVASCRIPT
+- EXPRESS.JS
+- NODE.JS
+- SQL
+- SEQUALIZE
+- AXIOS
+- BOOTSTRAP
+- HANDLEBARS.JS
 
+# Presentation
+https://docs.google.com/presentation/d/1Phz9WIRTsmLXfFejZHYkojtDj0xNo2YJMNb4hL1twJI/edit#slide=id.p
 
 
 # Future Development
@@ -104,8 +103,8 @@ Beyond our MVP:
 * Allow more user interactions like comments, posting recipes, etc.
 
 # Contributors:   
-Nathan Delman:
-Brooke Jones: 
-Emilio Estevez: 
-Sue Lee: 
-Mackenzie Neveaux:
+- Nathan Delman: https://github.com/Delmanat3
+- Brooke Jones: https://github.com/jones406
+- Emilio Estevez: https://github.com/Emilio512
+- Sue Lee: https://github.com/suelee0308
+- Mackenzie Neveaux: https://github.com/mackenzieneveaux
