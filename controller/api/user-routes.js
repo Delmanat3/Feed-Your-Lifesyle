@@ -12,6 +12,8 @@ router.post('/', async (req, res) => {
 
       req.session.logged_in = true;
 
+      
+
       res.status(200).json(userData);
     });
 //may need to use res.render instead of lines at bottom of profile.js 
