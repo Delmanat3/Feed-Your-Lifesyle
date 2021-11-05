@@ -1,25 +1,6 @@
+
 console.log("val drop")
-//to do: change keto string to be coming from the dropdown
 
-//main is only talking this file. Even listener is on dropdown menu click.
-/*
- $.el.table(
- $.el.tr(
-   $.el.th('first name'),
-   $.el.th('last name')),
- $.el.tr(
-   $.el.td('Joe'),
-   $.el.td('Stelmach'))
-).appendTo(document.body);
-
- */
-
-// .each() grabs every node element that has dropdown-option class of dropdown-optoin (everything in dropdown menu). 
-//el.attr("data-value") grabs the data-value attribute from the dropdown choice that was clicked. Response is then coverted and console logged.
-
-// const recipeBtn=$('#recipesBtn')
-
-// recipeBtn.on('click')
 let recipeList=$('#recipeList')
 
 let dropdownArr = $('.dropdown-option').toArray()
@@ -34,38 +15,42 @@ dropdownArr.forEach((el) => {
             recipeList.empty()
         res.map((item,i) => {
             recipeList.append(`
-
         <div class="card justify-content-center" style="width: 18rem;">
-            <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
-            <div class="card-body btnGrab">
-            <a id="a${i}" href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
-            <button data-value=${item.recipe.url} class="BtnToGrab btn btn-primary" id="${i}">Save</button>
-
-            </div>
-            <button id = "savebutton" class = "save-button">Save</button>
-          </div>
-        `
-        )
+        <img class="card-img-top" src="${item.recipe.image}" alt="Card image cap">
+        <div class="card-body btnGrab">
+        <a id="a${i}" href=${item.recipe.url}><h4>${item.recipe.label}</h4></a>
+        <button data-value=${item.recipe.url} class="BtnToGrab btn btn-primary" id="${i}">Save</button>
+        </div>
+        </div>
+        `)
 
         })
             // res.render('recipe')
         }).then(()=>{  
             
-            let histor=$('#history')
-
-            let arr1=[]
+            let arr1=[];
            
             $('.btnGrab').click($('.BtnToGrab'),
              (e)=>{    
              e.preventDefault()
              arr1.push($(e.target).data("value"))
-             console.log(arr1)
-             histor.append(arr1)
+             localStorage.setItem('saved', JSON.stringify(arr1))
+           
             })
              
-            }
+            }).then(()=>{
+             $('#boot').on('click', (e)=>{
+                let histor=$('#history')
+                e.preventDefault()
+                 var mode = JSON.parse(localStorage.getItem('saved'))
+                 console.log(mode)
+                 for(let i=0; i < mode.length; i++){
+                   histor.append(mode[i])
+                 }
+                 
+                }) 
             
-        )
+             } )
         .catch(err => {
             if (err) console.log(err)
             
@@ -73,15 +58,3 @@ dropdownArr.forEach((el) => {
     })
 })
 
-
-// historyBtn.addEventListener('click', function (event) {
-//     historyUl.innerHTML = <a href=${item.recipe.url}><h4 id="results" >${item.recipe.label}</h4></a>
-//      //set item to json storage -- set item to local storage on button click
-//     history.classList.remove('hide');
-//     history.classList.add('hide');
-// });
-
-// exitBtn.addEventListener('click', function (event) {
-//     history.classList.remove('hide');
-//     history.classList.add('hide');
-// })
