@@ -7,15 +7,7 @@
 //     var row = $("<row>");
 //     $("#results").append(row);
 
-//      for(var i = 0; i < result.length; i++){
-//       //fuckarubaduck
-//       var recipeItem = result[i].recipe;
-
-//       var favButton = $("<a>")
-//       var colDiv = $("<div>");
-//       var cardDiv = $("<div>");
-//       var cardBlock = $("<div>");
-//       var title = $("<h4>");
+//krjngerj
 //       var img = $("<img>");
 //       var dietLabels = $("<p>");
 //       var fullRecipe = $("<a>");
